@@ -24,7 +24,7 @@ Contribute to this project, whether it's:
     ```
 * Keep your cloned repo upto date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
     ```
-    git pull upstream main https://github.com/div-bargali/Data-Structures-and-Algorithms.git
+    git pull upstream main https://github.com/div-bargali/Data-Structures-and-Algorithms.git 
     ```
 * Create your feature branch
     ```
