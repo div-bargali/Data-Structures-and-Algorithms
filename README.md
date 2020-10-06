@@ -1,3 +1,9 @@
+# Data-Structures-and-Algorithms <img align = "right" src ="https://img.shields.io/github/watchers/div-bargali/Data-Structures-and-Algorithms?style=social"> <img align = "right" src ="https://img.shields.io/github/stars/div-bargali/Data-Structures-and-Algorithms?style=social">    <img align = "right" src ="https://img.shields.io/github/forks/div-bargali/Data-Structures-and-Algorithms?style=social">
+
+<img src="https://img.shields.io/github/contributors/div-bargali/Data-Structures-and-Algorithms">  <img src="https://img.shields.io/tokei/lines/github/div-bargali/Data-Structures-and-Algorithms">           <img src="https://img.shields.io/github/last-commit/div-bargali/Data-Structures-and-Algorithms">   <img src="https://img.shields.io/github/languages/count/div-bargali/Data-Structures-and-Algorithms">
+<p align="left">
+<img src="https://img.shields.io/github/hacktoberfest/2020/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="hacktoberfest">
+</p>
 
 ## Introduction
 
@@ -23,12 +29,13 @@ Algorithms are not limited to computers. They are like a set of step-by-step ins
 - C/C++
 - Python
 - Java
+- Go
 
 ## Contribution
 
-Before submitting a bug, please do the following:
+Before submitting a Pull Request, please do the following:
 
-- Check [Contribution](./CONTRIBUTING.md) Guide Before Contribution.
+- Check [Contribution](./CONTRIBUTING.md) Guide Before contributing.
 - Create separate issues for different languages.
 
 

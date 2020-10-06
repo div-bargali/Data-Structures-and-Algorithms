@@ -32,7 +32,7 @@ Contribute to this project, whether it's:
     ```
 * Commit all the changes
     ```
-    git commit -am "Meaningful commit message"
+    git commit -m "Meaningful commit message"
     ```
 * Push the changes for review
     ```
@@ -46,6 +46,13 @@ Contribute to this project, whether it's:
 * If you've added code that should be tested, add tests as comments. 
 * In python use docstrings to provide tests.
 * Make sure your code properly formatted.
+* Make sure to maintain a proper directory structure:
+    ```
+    <Language>/<Algorithms>/<Algorithm Paradigm>/<. . .>
+    ```
+    ```
+    <Language>/<Data Structures>/<Data Structure name>/<. . .>
+    ```
 * Issue that pull request!
 
 
