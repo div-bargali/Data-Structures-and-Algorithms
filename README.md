@@ -4,7 +4,6 @@
 <p align="left">
 <img src="https://img.shields.io/github/hacktoberfest/2020/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="hacktoberfest">
 </p>
-<br>
 
 ## Introduction
 
