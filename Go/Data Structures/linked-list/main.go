@@ -42,6 +42,12 @@ func (l *linkedList) deleteWithValue(value int) {
 	}
 
 	previousToDelete := l.head
+	/*
+	We do not want to compare the data of the node in to delete,
+	we are going to	compare the data of the next node. 
+	To skip the node with the input value, we need to make modifications 
+	in the previous node next.
+	*/ 
 	for previousToDelete.next.data != value {
 		if previousToDelete.next.next == nil {
 			return
