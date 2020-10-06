@@ -29,9 +29,9 @@ Algorithms are not limited to computers. They are like a set of step-by-step ins
 
 ## Contribution
 
-Before submitting a bug, please do the following:
+Before submitting a Pull Request, please do the following:
 
-- Check [Contribution](./CONTRIBUTING.md) Guide Before Contribution.
+- Check [Contribution](./CONTRIBUTING.md) Guide Before contributing.
 - Create separate issues for different languages.
 
 
