@@ -1,4 +1,7 @@
+# Data-Structures-and-Algorithms <img align = "right" src ="https://img.shields.io/github/watchers/div-bargali/Data-Structures-and-Algorithms?style=social"> <img align = "right" src ="https://img.shields.io/github/stars/div-bargali/Data-Structures-and-Algorithms?style=social">    <img align = "right" src ="https://img.shields.io/github/forks/div-bargali/Data-Structures-and-Algorithms?style=social">
 
+<img src="https://img.shields.io/github/contributors/div-bargali/Data-Structures-and-Algorithms">  <img src="https://img.shields.io/tokei/lines/github/div-bargali/Data-Structures-and-Algorithms">           <img src="https://img.shields.io/github/last-commit/div-bargali/Data-Structures-and-Algorithms">   <img src="https://img.shields.io/github/languages/count/Vishruth-S/CompetitiveCode">
+<br>
 ## Introduction
 
 Data structures & Algorithms are an essential part of programming. It comes under the fundamentals of computer science. It gives us the advantage of writing better and efficient code in less time. It is a key topic when it comes to Software Engineering interview questions so as developers, we must have knowledge of Data Structure and Algorithms
