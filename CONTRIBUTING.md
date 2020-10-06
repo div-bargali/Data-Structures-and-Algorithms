@@ -32,7 +32,7 @@ Contribute to this project, whether it's:
     ```
 * Commit all the changes
     ```
-    git commit -am "Meaningful commit message"
+    git commit -m "Meaningful commit message"
     ```
 * Push the changes for review
     ```
