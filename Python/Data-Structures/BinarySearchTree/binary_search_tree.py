@@ -19,7 +19,16 @@ class Node:
       else:
         self.left.insert(node)
 
-  # print tree using inorder traversal
+  # Print tree pre order recursively
+  def preOrder(self):
+    if self != None:
+      print(self.value, end=' ')
+      if self.left != None:
+        self.left.preOrder()
+      if self.right != None:
+        self.right.preOrder()
+
+  # Print tree in order recursively
   def printTree(self):
     if self != None:
       if self.left != None:
@@ -28,18 +37,37 @@ class Node:
       if self.right != None:
         self.right.printTree()
 
+  # Print tree post order recursively
+  def postOrder(self):
+    if self != None:
+      if self.left != None:
+        self.left.postOrder()
+      if self.right != None:
+        self.right.postOrder()
+      print(self.value, end=' ')
+
 # driver code
 if __name__ == "__main__":
 
-  x = input("Enter root node:")
+  x = input("Enter root node: ")
   tree = Node(int(x))
 
   # add nodes to the BST till 'q' is input
   while True:
-    x = input("Enter value to add to the tree or q to quit:")
+    x = input("Enter value to add to the tree or q to quit: ")
     if x == "q":
       break
     tree.insert(Node(int(x)))
 
-  print("The BST input traversed inorder:")
+  print()
+
+  print("The BST input traversed pre-order:")
+  tree.preOrder()
+  print()
+
+  print("The BST input traversed in-order:")
   tree.printTree()
+  print()
+
+  print("The BST input traversed post-order:")
+  tree.postOrder()
