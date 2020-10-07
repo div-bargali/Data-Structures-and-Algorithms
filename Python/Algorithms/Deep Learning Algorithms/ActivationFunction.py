@@ -1,8 +1,7 @@
 """
 __FileCreationDate__  :  4/5/2020
-__Author__           :  CodePerfectPlus
+__Author__           :  coder-dev-geek
 __Package__         :  Python 3
-__GitHub__         : https://www.github.com/codeperfectplus
 """
 import numpy as np
 
