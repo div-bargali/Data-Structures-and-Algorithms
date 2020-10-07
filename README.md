@@ -1,7 +1,19 @@
-# Data-Structures-and-Algorithms <img align = "right" src ="https://img.shields.io/github/watchers/div-bargali/Data-Structures-and-Algorithms?style=social"> <img align = "right" src ="https://img.shields.io/github/stars/div-bargali/Data-Structures-and-Algorithms?style=social">    <img align = "right" src ="https://img.shields.io/github/forks/div-bargali/Data-Structures-and-Algorithms?style=social">
+# Data Structures and Algorithms <img align = "right" src ="https://img.shields.io/github/watchers/div-bargali/Data-Structures-and-Algorithms?style=social"> <img align = "right" src ="https://img.shields.io/github/stars/div-bargali/Data-Structures-and-Algorithms?style=social">    <img align = "right" src ="https://img.shields.io/github/forks/div-bargali/Data-Structures-and-Algorithms?style=social">
 
-<img src="https://img.shields.io/github/contributors/div-bargali/Data-Structures-and-Algorithms">  <img src="https://img.shields.io/tokei/lines/github/div-bargali/Data-Structures-and-Algorithms">           <img src="https://img.shields.io/github/last-commit/div-bargali/Data-Structures-and-Algorithms">   <img src="https://img.shields.io/github/languages/count/div-bargali/Data-Structures-and-Algorithms">
-<p align="left">
+<p align="center">
+<img src="https://img.shields.io/github/contributors/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge">
+<img src="https://img.shields.io/tokei/lines/github/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge">
+<img src="https://img.shields.io/github/last-commit/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge">
+<img src="https://img.shields.io/github/languages/count/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge">
+ </p>
+ 
+<p align="center">
+<img src="https://img.shields.io/github/issues/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="open issues">
+<img src="https://img.shields.io/github/issues-closed/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="closed issues">
+<img src="https://img.shields.io/github/issues-pr/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="open pull request">
+<img src="https://img.shields.io/github/issues-pr-closed/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="closed pull request">
+</p>
+<p align="center">
 <img src="https://img.shields.io/github/hacktoberfest/2020/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="hacktoberfest">
 </p>
 
