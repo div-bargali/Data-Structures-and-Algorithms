@@ -13,8 +13,7 @@ bool subsetSum(int set[], int sum, int n){
 
     bool dp[n+1][sum+1];
 
-    //if sum itself is 0,then we can get 0 sum by not selecting
-    //any element from the set
+    //if sum itself is 0,then we can get 0 sum by not selecting any element from the set
 
     for(int i=0; i<=n; i++)
         dp[i][0]=1;
