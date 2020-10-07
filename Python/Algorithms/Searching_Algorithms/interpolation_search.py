@@ -48,7 +48,7 @@ n= int(input("Enter the element whose position you want to know: "))
 index = interpolation_search(my_list, n)
 
 if index != -1:
-    print (f"{n} is found at position  ", index + 1)
+    print (f"{n} is found at position  ", index + 1) # The output gives the position of the element, not index
 
 else:
     print (f"{n} is not found in the list")
