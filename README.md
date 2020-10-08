@@ -52,5 +52,5 @@ Before submitting a Pull Request, please do the following:
 
 ## Community
 
-Join our [Discord Server](https://discord.gg/Uhddwx) :email:
+Join our [Discord Server](https://discord.gg/vBFnscs). :email:
 
