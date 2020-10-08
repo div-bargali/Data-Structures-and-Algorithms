@@ -1,4 +1,4 @@
-YOU GET THE PROPER CODE FOR CIRCULAR LINKEDLIST !
+//YOU GET THE PROPER CODE FOR CIRCULAR LINKEDLIST !
 
 public class CreateList {  
     //Represents the node of list.  
