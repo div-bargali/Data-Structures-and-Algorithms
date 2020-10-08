@@ -50,4 +50,7 @@ Before submitting a Pull Request, please do the following:
 - Check [Contribution](./CONTRIBUTING.md) Guide Before contributing.
 - Create separate issues for different languages.
 
+## Community
+
+Join our [Discord Server](https://discord.gg/Uhddwx) :email:
 
