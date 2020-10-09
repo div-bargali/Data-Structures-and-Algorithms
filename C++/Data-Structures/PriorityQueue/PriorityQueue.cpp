@@ -1,9 +1,9 @@
 /*
-Title: Priority Queue
-    Priority Queue is an extension of queue.
-    It is designed such that all elements in the queue are in non increasing order.
-    While dequeue, an element with high priority is dequeued before an element with low priority.
-    Function used: priorityQueue.top(), priorityQueue.push(), priorityQueue.empty(), priorityQueue.pop(), priorityQueue.size()
+Title: Priority Queue in c++
+        Priority Queue is an extension of queue.
+        It is designed such that all elements in the queue are in non increasing order.
+        While dequeue, an element with high priority is dequeued before an element with low priority.
+Function used: priorityQueue.top(), priorityQueue.push(), priorityQueue.empty(), priorityQueue.pop(), priorityQueue.size()
 Author: Sharmila
 */
 
