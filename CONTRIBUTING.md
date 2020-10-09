@@ -17,6 +17,9 @@ Contribute to this project, whether it's:
 
 ### Making a PR
 
+> - Make sure you have been assigned the issue to which you are making a PR.
+> - If you make PR before being assigned, It will be labeled `invalid` and closed without merging.
+
 * Fork the repo and clone it on your machine.
 * Add a upstream link to main branch in your cloned repo
     ```
