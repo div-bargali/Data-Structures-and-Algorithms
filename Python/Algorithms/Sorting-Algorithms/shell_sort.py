@@ -1,5 +1,9 @@
 # Python program for implementation of Shell Sort
 
+# Shell sort is an algorithm that first sorts the elements far apart
+# from each other and successively reduces the interval 
+# between the elements to be sorted. It is a generalized version of insertion sort.'''
+
 def shellSort(values): 
 
     # Start with a somewhat big gap, then reduce the gap
