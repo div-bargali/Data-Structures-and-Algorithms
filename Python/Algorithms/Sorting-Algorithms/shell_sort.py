@@ -32,8 +32,8 @@ def shellSort(values):
 
 # Insert Test Values
 values = [1, 2, 4, 12, 34, 54, 2, 3, 9, 15, 20]
-
 n = len(values)
+
 print ("Array before sorting: "+ str(values))
 
 shellSort(values)
