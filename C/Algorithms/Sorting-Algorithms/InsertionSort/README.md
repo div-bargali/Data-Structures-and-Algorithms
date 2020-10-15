@@ -25,10 +25,10 @@ The sorted array is: </br>
 
 ### Sample Output
 The sorted array is: </br>
-`21 23 44 54 54 56 65 87 96 99` </br>
+`21 23 44 54 54 56 65 87 96 99` </br></br>
 
 
-Now see the codes for proper understanding of Algorithm.</br>
+Now see the codes for proper understanding of Algorithm.</br></br>
 
 
 ### Contributed by:
