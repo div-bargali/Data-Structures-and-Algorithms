@@ -1,6 +1,6 @@
 <h1 align=center>Insertion Sort</h1>
 
-### Note: THE PROGRAM IS IN C 
+#### NOTE: THE PROGRAM IS IN C 
 </br>
 
 Here's a brief about Insertion sort. </br>
@@ -15,7 +15,7 @@ Here's a brief about Insertion sort. </br>
 
 ### Sample Output
 The sorted array is: </br>
-21 34 43 56
+`21 34 43 56`
 
 ### Sample Input-2
 ```
@@ -25,9 +25,11 @@ The sorted array is: </br>
 
 ### Sample Output
 The sorted array is: </br>
-21 23 44 54 54 56 65 87 96 99 </br>
+`21 23 44 54 54 56 65 87 96 99` </br>
+
 
 Now see the codes for proper understanding of Algorithm.</br>
+
 
 ### Contributed by:
 [*Sarthak Luthra*](https://github.com/sarthak-21)
