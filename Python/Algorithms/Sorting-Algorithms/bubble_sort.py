@@ -4,7 +4,7 @@
 
 # time complexity = O(n^2), but better than selection since best case complexity is O(n)
 
-def bubbleSort(a, ascending=True):
+def bubbleSort(a, ascending=True): # Function has defined.
 	n = len(a)
 	for i in range(n):
 		for j in range(n-i-1):
