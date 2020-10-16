@@ -13,7 +13,7 @@ NODE* getnode(int value)
     NODE *newnode=(NODE *)malloc(sizeof(NODE));
     if(newnode==NULL)
     {
-    printf("Memory not alloted\n");
+    printf("Memory is not alloted\n");
     return (0);
     }
     else
@@ -68,7 +68,7 @@ void reverse()
 void display()
 {
     if(start==NULL)
-    printf("NO nodes to display\n");
+    printf("NO nodes to be displayed\n");
     for(currptr=start;currptr!=NULL;currptr=currptr->link)
     printf("%d",currptr->info);
 }
@@ -77,7 +77,7 @@ void main()
  int c;
  do{
 
- printf("Enter choice\n");
+ printf("Enter your choice\n");
  scanf("%d", &c);
     switch(c)
     {
