@@ -1,3 +1,11 @@
+/*
+
+PRIM'S ALGORITHM
+This program determines the minimum cost and minimum spanning tree edges for a given matrix.
+
+@author: SharathKumar (sharathkumar106)
+
+*/
 import java.util.Scanner;
 
 public class PrimsAlgorithm {
