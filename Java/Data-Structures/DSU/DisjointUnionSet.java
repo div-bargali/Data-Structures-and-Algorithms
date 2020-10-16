@@ -20,7 +20,7 @@ class DSU {
         }
         return x;
     }
-    public boolean union(int x, int y) {
+    public boolean union(int x, int y) { /// x and y should be provided in zero based
         int a = find(x);
         int b = find(y);
         if(a == b)
