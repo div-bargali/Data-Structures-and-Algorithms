@@ -26,6 +26,8 @@ class DSU {
         if(a == b)
             return false;
         if(size[a] < size[b]){
+        /// if the size of A subtree smaller than the b one we should merge the A to B
+        /// so we make the parent of A is the B parent and increase the size of B subtree by the size of A subtree
             parent[a] = parent[b];
             size[b] += size[a];
         }else{
