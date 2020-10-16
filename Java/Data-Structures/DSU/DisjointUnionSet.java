@@ -4,6 +4,7 @@ class DSU {
     int[] parent;
     int[] size;
     int count;
+    //Count Variable will keep track of total number of connected components in the disjoint set
     public DSU(int N) {
         parent = new int[N];
         count = N;
@@ -37,6 +38,8 @@ class DSU {
             size[a] += size[b];
         }
         count--;
+        //Each time we connect two component irrespective of there sizes, we will have only 1 single component left.
+        //even the operations are large and set becomes dense this will still follow the motive
         return true;
     }
 }
