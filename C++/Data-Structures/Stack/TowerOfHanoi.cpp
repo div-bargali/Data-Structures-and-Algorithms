@@ -10,7 +10,7 @@ void TOH(int n,char Sour, char Aux,char Des)
 		return;
 	}
 	
-	TOH(n-1,Sour,Des,Aux);
+	TOH(n-1,Sour,Des,Aux);//move n-1 disks from Sour to Aux
 	cout<<"Move Disk "<<n<<" from "<<Sour<<" to "<<Des<<endl;
 	TOH(n-1,Aux,Sour,Des);
 }
