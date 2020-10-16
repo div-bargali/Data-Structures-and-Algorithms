@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* insertion sort function:
+/* insertion sort function: sorts the given array
    parameters:
       vector: array to be sorted
       n: size of the array to be sorted
