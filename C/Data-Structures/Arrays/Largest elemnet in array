@@ -1,0 +1,23 @@
+#include <stdio.h> 
+  
+
+int larg(int ar[], int n) 
+{ 
+    int i; 
+     
+     
+    int max = ar[0]; 
+    for (i = 1; i < n; i++) 
+        if (ar[i] > max) 
+            max = ar[i]; 
+  
+    return max; 
+} 
+  
+int main() 
+{ 
+    int ar[] = {12, 32, 4, 70, 98}; 
+    int n = sizeof(ar)/sizeof(ar[0]); 
+    printf("Largest in given array is %d", larg(ar, n)); 
+    return 0; 
+} 
