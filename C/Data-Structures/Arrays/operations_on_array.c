@@ -10,7 +10,7 @@ main()
 	{
 		scanf("%d",&arr[i]);
 	}
-	printf("\nTraversing:\nThe elements of the Array are:\t");
+	printf("\n Traversing:\nThe elements of the Array are: \t");
 	for(i=0;i<10;i++)
 	{
 		printf("%d\t",arr[i]);
@@ -18,14 +18,14 @@ main()
 	printf("\n-----------------------------------------------------------------------------------------------------------");
 	
 	printf("\n\n\t2) INSERTION");
-	printf("\n\nThe Array is:\t");
+	printf("\n\n The Array is:\t");
 	for(i=0;i<10;i++)
 	{
 		printf("%d\t",arr[i]);
 	}
-	printf("\nEnter the Value to be added: ");
+	printf("\n Enter the Value to be added: ");
 	scanf("%d",&a);
-	printf("\nEnter the Position to which %d has to added: ",a);
+	printf("\n Enter the Position to which %d has to added: ",a);
 	scanf("%d",&b);
 	for(i=10;i>=b;i--)
 	{
