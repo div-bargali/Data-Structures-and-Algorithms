@@ -12,7 +12,6 @@ import java.util.*;
          this.arr=arr;
          size=arr.length;
          top=arr.length-1;               
-        //  System.out.println(arr[0]);
         }
       }
     @SuppressWarnings("unchecked")
