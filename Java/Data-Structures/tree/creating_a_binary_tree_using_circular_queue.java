@@ -3,10 +3,10 @@ import java.util.*;
 //stack ds
  class  stackk <T >{ // using generic types 
   T arr[];
-  int size;              // used array as a physical data structure for stack and size will contan the size of array and top will point to the top most element of the stack
+  int size;              // used array as a physical data structure for stack and size will contain the size of array and top will point to the top most element of the stack
   int top;
 
-    stackk(T arr[]){     //constructor(parametrized) for intilizing the refrence (arr ,size ,top) 
+    stackk(T arr[]){     //constructor for intilizing the refrence (arr ,size ,top) 
         if(arr.length>0)
        { 
          this.arr=arr;
@@ -15,7 +15,7 @@ import java.util.*;
         }
       }
     @SuppressWarnings("unchecked")
-    stackk(){                         // constructor (non-parametrize) intilzing the refrence (size ,top) and creation of array 
+    stackk(){                         // constructor intilzing the refrence (size ,top) and creation of array 
       Scanner ob  = new Scanner (System.in); 
       int size=ob.nextInt();
       Object arr[]=new Object[size];    // Object type array created,as you cant creat for generic typed 
@@ -24,7 +24,7 @@ import java.util.*;
       top=arr.length-1;
 
     }
-     public T popp(){   // popp method for poping and returning the value from stack (if not value not present the will return null)
+     public T popp(){   // popp method for poping and returning the value from stack (if  value not present the will return null)
       
        T var=null;
        if(top <0)
@@ -70,18 +70,18 @@ class queue<T>{
         Scanner obj  = new Scanner (System.in);
         System.out.println("enter the size of array , no of elements should be 1 less than the given size");
         int size=obj.nextInt();
-        Object arr2[]=new Object[size];    //same cretion of Object type array 
+        Object arr2[]=new Object[size];    //same as above,cretion of Object type array 
 
         arr=(T[])arr2;   // conversion of Object type array to T
         rear=0;
         front=0;
 
     }
-    public void push(T var){ //
+    public void push(T var){ 
       
        // pushing of a value of var into circular queue if my rear is 2 less than front  and if my rear is not equal to last index of queue and front should not be zero then
         if(rear%arr.length != front-1 && !(rear%arr.length==arr.length-1 && front==0))  
-           { int insertingat=(++rear)%arr.length;     //getting of position to insert in a value (i had take mod as my rear value will keep going on increasing so that mode will help me in getting the index)
+           { int insertingat=(++rear)%arr.length;     //getting of position to insert in a value (i had taken mod ,as my rear value will keep going on increasing so that mode will help me in getting the index)
             arr[insertingat]=var;}
         
         
@@ -92,7 +92,7 @@ class queue<T>{
       // deleting from queue if my front is not equal to real as my queueu would be empty then
         T value =null; 
         if(front!=rear){
-            int deletingfrom=(++front)%arr.length;    // geeting the position for where i wana delete (same explanation for front )
+            int deletingfrom=(++front)%arr.length;    // geeting the position for where i wanna delete (same explanation as given for rear )
             value=arr[deletingfrom];
             arr[deletingfrom]=null;
          }
@@ -100,7 +100,7 @@ class queue<T>{
         System.out.println("queue underfolw");
         return value;
     }
-    public void display(){   // method to display all the node 
+    public void display(){   // method to display the content of queue 
         for(int i=front;i<rear;i++)   //taken front to rear because  front will always be less than the rear if not then queue will be empty
         System.out.println(arr[(i % arr.length)]);
     }
@@ -112,8 +112,8 @@ class queue<T>{
 
 class creatingb{
     
-    nodes rootp;   // for pointing to root node
-    // class representing a particular node of tree
+    nodes rootp;   //created for pointing to root node
+    //blue print of node
     static class nodes{
          nodes left;
          int value;
@@ -131,9 +131,9 @@ class creatingb{
     public void creatingtree(queue<creatingb.nodes> objj){
         nodes poi;
         Scanner in= new Scanner(System.in);
-          //new node poped out from queue of which we want to create left and right if user want
+          //new node poped out from queue for which we want to create left and right if user want
             poi =objj.pop();
-        while(poi != null ){ //this is going to be repated until poi is not null(or getting the node from queue)
+        while(poi != null ){ //this is going to be repated until poi is not null(or until it is getting node from queue)
           
             //asking for left node of a node that poped out of the queue
             System.out.println("enter left node otherwise -1 for null");
@@ -149,7 +149,7 @@ class creatingb{
                 poi.left=null;
             }
 
-            //asking for right node of the node that poped out of the queue
+            //asking for right node for the node that just poped out of the queue
             System.out.println("enter right node otherwise -1 for null");
             int value2=in.nextInt();
             if( value2 !=-1){
@@ -171,10 +171,10 @@ class creatingb{
         }
     }
     @SuppressWarnings("unchecked")
-    //tree traversal preorder
+    //tree traversal (preorder)
     public void treet(nodes poi){   
 
-        //was done using for loop but due to null pointer Exception i had to do recursively
+        //tried using iteration but it did not work out as my code require to use the object containing null value
 
         //  stackk<creatingb.nodes> bb = new stackk<creatingb.nodes>();
         //  nodes poi=rootp;
@@ -207,16 +207,15 @@ class creatingb{
       if(head != null){
         int x=countingn(head.left);
         int y=countingn(head.right);
-        return x+y+1;  //returning  previous node sum with 1(of current node) added to it nodes             //// we can upgrade this for counting nodes with degree 2 m degree 1 or degree 0 or mix.
+        return x+y+1;  //returning  previous node sum with adding 1 to it(of current node) added to it nodes             //// we can upgrade this for counting nodes with degree 2 m degree 1 or degree 0 or mix.
       }
-      return 0; //returning 0 if the head is one null node
+      return 0; //returning 0 if the head is on null node
     }
 
 }
 
 public class creating_a_binary_tree_using_circular_queue{
     public static void main(String [] a){
-        //first enter the queue size (dont take it to small) (take it accoring to tree (other thing is that queue is circular))
         queue<creatingb.nodes> obj = new queue<creatingb.nodes>();
         creatingb bb = new creatingb (obj);
         //creation of tree
