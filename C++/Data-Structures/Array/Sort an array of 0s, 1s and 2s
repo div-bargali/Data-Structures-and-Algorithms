@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+void sort012(int *arr, int n)
+{
+    //Write your code here
+    int i=0;
+    int count0=0;
+    for(i=0;i<n;i++){
+        if(arr[i]==0){
+    
+           count0 ++;
+        }
+        
+    
+    }
+    int count1=0;
+    for(int j=0;j<n;j++){
+        if(arr[j]==1){
+            
+            count1++;
+        }
+    
+    }
+    int count2=0;
+    for(int k=0;k<n;k++) {
+        if(arr[k]==2){
+          
+            count2++;
+        }
+       
+    }
+    int l=0;
+    while(count0>0){
+        arr[l++]=0;
+        count0--;
+    }
+    while(count1>0){
+        arr[l++]=1;
+        count1--;
+    }
+    while(count2>0){
+        arr[l++]=2;
+        count2--;
+    }
+    for(int l=0;l<n;l++){
+        cout << arr[l] << " ";
+    }
+    cout << endl;
+    
+
+}
+
+int main() {
+	//code
+	int t;
+	cin >> t;
+	for(int i=0;i<t;i++){
+	    int n ;
+	    cin >> n;
+	    int arr[1000000];
+	    for(int i=0;i<n;i++){
+	        cin >> arr[i];
+	    }
+
+	    sort012(arr ,n);
+	}
+	return 0;
+}
