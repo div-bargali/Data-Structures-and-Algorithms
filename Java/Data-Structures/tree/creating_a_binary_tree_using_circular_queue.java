@@ -1,3 +1,4 @@
+//this code will create  the tree using queue ds 
 import java.util.*;
 
 //stack ds
@@ -68,7 +69,7 @@ class queue<T>{
     T arr[];
     queue(){
         Scanner obj  = new Scanner (System.in);
-        System.out.println("enter the size of array , no of elements should be 1 less than the given size");
+        System.out.println("enter the size of queue");
         int size=obj.nextInt();
         Object arr2[]=new Object[size];    //same as above,cretion of Object type array 
 
