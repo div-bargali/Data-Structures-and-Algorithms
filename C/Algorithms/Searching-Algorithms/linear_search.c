@@ -1,3 +1,14 @@
+/*Program made by Pedro Perez
+  Github: https://github.com/pedrousp
+  This program will read an integer from stdin and it'll be stored in size_array, which will be the size of the array
+  Then it'll allocate size_array * 4 bytes in heap memory
+  Next it'll read size_array integers from stdin
+  Next it'll read an integer from stdin which will be looked for in the array
+  Then it'll look for the key in the array, stating at the position 0 and going all the way to the end or until it finds the first occurence of key
+  After that it'll free the memory allocated for the array and it'll return the found value
+  The program will stop*/
+
+
 #include<stdlib.h>
 #include<stdio.h>
 
@@ -32,7 +43,7 @@ int *input_array(int size){
 //Looks for the key in the array of size elements. Returns the position of key in the array or -1 if key is not in the array
 int linear_search(int key, int* array, int size){
     int found = -1;
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size && found == -1; i++){
         if(key == array[i]){
             found = i;
         }
