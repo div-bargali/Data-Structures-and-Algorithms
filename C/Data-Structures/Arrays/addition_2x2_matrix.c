@@ -1,3 +1,8 @@
+          //Title-Addition of 2x2 Matrix in C Language
+//What it does-The program inputs the elements of two 2x2 matrix from the user. On the obtained matrices, the operation of matrix addition is performed. Finally the optput of it is displayed.
+//Code:
+
+
 #include <stdio.h>
 int main() {
     int a[2][2], b[2][2], sum[2][2], i, j; //a[2][2] is 1st matrix,
