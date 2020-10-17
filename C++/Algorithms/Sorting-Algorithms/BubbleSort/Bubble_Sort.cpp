@@ -3,57 +3,57 @@
 #include<iostream>
 using namespace std;
 
-// swap two elements
-void swap(int *x, int *y)  
-{  
-    int temp = *x;  
-    *x = *y;  
-    *y = temp;  
-}  
 
 //Function to implement bubble sort  
-void bubbleSort(int arr[], int n)  
-{  
-    int i, j;  
-    for (i = 0; i < n-1; i++)      
-      
-    // Last i elements are already in place  
-    for (j = 0; j < n-i-1; j++)  
-
-        // swap if arr[j] is greater than arr[j+1]   
-        if (arr[j] > arr[j+1])  
-        {
-           swap(&arr[j], &arr[j+1]);  
-        }   
-
-}  
+void bubblesort(int a[],int n){
+   int i,j;
+   int rounds = 0;
+   for ( i = 0; i < n; i++)
+   {
+       rounds++;
+       for ( j = 0; j< n-i-1; j++)
+       {
+           if (a[j] > a[j+1])
+           {
+               int temp = a[j];
+               a[j] = a[j+1];
+               a[j+1] = temp;
+           }
+           
+       }
+       
+   }
+   cout<<"no of rounds : "<<rounds<<endl;
+}
 // DRIVER CODE
 int main()  
 {  
     int n;
-    cout<<"Enter the size of the array"<<endl;
-    // enter size of array
-    cin>>n; 
-
-    int arr[n];
-    cout<<"Input the array"<<endl;
-     
+    cout<<"Enter the size of array "<<endl;
+    cin>>n;
+    int myarr[n];
     // Input the array 
-    for(int i=0;i<n;i++)
+    cout << "enter the  integers in any order " << endl;
+    for (int i = 0; i < n; i++)
     {
-        cin>>arr[i];
+        cin >> myarr[i];
     }
-
-    bubbleSort(arr, n);  
-    cout<<"Sorted array: \n";  
-    
+    //print arry before bubble sort
+      cout << "before bubble sort " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << myarr[i] << " ";
+    }
+    cout << endl;
     // print the sorted array 
-     for(int i=0;i<n;i++)
-     {
-         cout<<arr[i]<<" ";
-     }
-
-    return 0;  
+    
+    cout << "after bubble sort " << endl;
+    bubblesort(myarr,n);
+    for (int i = 0; i < n; i++)
+    {
+        cout << myarr[i] << " ";
+    }
+    cout << endl;
 }  
   
-// CONTRIBUTOR : Harsh Prakash
+// CONTRIBUTOR : satyam kumar
