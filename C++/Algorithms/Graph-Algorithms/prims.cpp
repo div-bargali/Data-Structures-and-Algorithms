@@ -1,6 +1,8 @@
 // A C++ program for Prim's Minimum 
 // Spanning Tree (MST) algorithm. The program Used
 //the adjacency matrix 
+//Ask the input from the usee the num of edges, 
+//num of vertices and the graph with the value of each edge
 #include <bits/stdc++.h>
 using namespace std;
 struct compare{
