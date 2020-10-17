@@ -1,3 +1,7 @@
+/*
+Implementation of Quicksort according to https://en.wikipedia.org/wiki/Quicksort
+*/
+
 package main
 
 import (
@@ -12,18 +16,16 @@ func swap(a *int64, b *int64) {
 }
 
 func partition(arr []int64, low int, high int) int {
-	swap(&arr[(high + low) / 2], &arr[high])
-
 	pivot := arr[high]
-	i := low - 1
+	i := low
 	for j := low; j <= high; j++ {
 		if arr[j] < pivot {
-			i++
 			swap(&arr[i], &arr[j])
+			i++
 		}
 	}
-	swap(&arr[i + 1], &arr[high])
-	return i + 1
+	swap(&arr[i], &arr[high])
+	return i
 }
 
 func quicksort(arr []int64, low int, high int) {
@@ -35,12 +37,7 @@ func quicksort(arr []int64, low int, high int) {
 }
 
 func main() {
-	var a int64 = 10
-	var b int64 = 20
-
-	swap(&a, &b)
-	fmt.Printf("%t\n", a == 20 && b == 10)
-
+	//Generates n random values and sorts them with quicksort
 	n := 100
 	arr := make([]int64, 100)
 	for i := 0; i < n; i++ {
