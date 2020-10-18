@@ -1,8 +1,9 @@
+
 class Stack:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.items == []
 
     def push(self, item):
@@ -18,16 +19,10 @@ class Stack:
         return len(self.items)
 
     def show(self):
-        if self.isEmpty():
+        if self.is_empty():
             print("Empty stack")
         else: # from top
             print("Stack contents: ", end='')
             for i in range(self.size()):
                 print(self.items[i], end=' ')
             print()
-
-s = Stack()
-s.push('hello')
-s.push('true')
-print(s.pop())
-s.show()
