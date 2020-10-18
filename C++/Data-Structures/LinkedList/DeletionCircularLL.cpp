@@ -1,225 +1,127 @@
-#include <bits/stdc++.h>
-using namespace std;
 
 
-//Test cases:
-//1
-//5
-//1 2 3 4 5
-//Expected Output:
-//2 3 4 5
-//input (index = 3)
-//2 3 4
-//2 3
+//Deletion of cll
+// C program to delete a given key from 
+// linked list. 
+#include <stdio.h> 
+#include <stdlib.h> 
 
+/* structure for a node */
+struct Node { 
+	int data; 
+	struct Node* next; 
+}; 
 
-//Class for creation of a Node
-class Node{
-    public:
-      int data;
-      Node* next;
-      Node(int data)
-      {
-        this->data = data;
-        this->next = NULL;
-      }
-};
+/* Function to insert a node at the beginning of 
+a Circular linked list */
+void push(struct Node** head_ref, int data) 
+{ 
+	// Create a new node and make head as next 
+	// of it. 
+	struct Node* ptr1 = (struct Node*)malloc(sizeof(struct Node)); 
+	ptr1->data = data; 
+	ptr1->next = *head_ref; 
 
-//Class for implementation of CLL
-class CLL{
-    public:
-    //to keep track of head of the LL
-    Node* head;
-    //to keep track of the last node of LL.
-    Node* tail;
-    CLL()
-    {
-      this -> head = NULL;
-      this -> tail = NULL;
-    }
-    //Since this code is to demonstrate deletion, we will only use InsertAtEnd in the CLL
-    void insertAtEnd(int data)
-    {
+	/* If linked list is not NULL then set the 
+	next of last node */
+	if (*head_ref != NULL) { 
+		// Find the node before head and update 
+		// next of it. 
+		struct Node* temp = *head_ref; 
+		while (temp->next != *head_ref) 
+			temp = temp->next; 
+		temp->next = ptr1; 
+	} 
+	else
+		ptr1->next = ptr1; /*For the first node */
 
-      //Create new node
-      Node* newNode = new Node(data);
+	*head_ref = ptr1; 
+} 
 
-      //If list is empty
-      if(head == NULL)
-      {
-        head = newNode;
-        tail = newNode;
-        tail -> next = head;
-      }
+/* Function to print nodes in a given 
+circular linked list */
+void printList(struct Node* head) 
+{ 
+	struct Node* temp = head; 
+	if (head != NULL) { 
+		do { 
+			printf("%d ", temp->data); 
+			temp = temp->next; 
+		} while (temp != head); 
+	} 
 
-      //If there are elements already present in the list
-      else
-      {
-        tail -> next = newNode;
-        tail = newNode;
-        tail -> next = head;
-      }
-    }
+	printf("\n"); 
+} 
 
+/* Function to delete a given node from the list */
+void deleteNode(struct Node* head, int key) 
+{ 
+	if (head == NULL) 
+		return; 
 
-    //Delete node from the beginning
-    void deleteFromBeg()
-    {
-        Node* temp = head;
-        if(temp == NULL)
-        {
-            cout<<"LL is empty!"<<endl;
-            return;
-        }
-        else if(temp->next == temp)
-        {
-            head = NULL;
-            tail = NULL;
-            free(temp);
-            return;
-        }
-        head = head -> next;
-        tail -> next = head;
-        free(temp);
-    }
+	// Find the required node 
+	struct Node *curr = head, *prev; 
+	while (curr->data != key) { 
+		if (curr->next == head) { 
+			printf("\nGiven node is not found"
+				" in the list!!!"); 
+			break; 
+		} 
 
-    //Delete Node from middle given the index
-    void deleteFromMid(int index)
-    {
-        if(index == 0)
-        {
-            deleteFromBeg();
-            return;
-        }
-        Node* temp = head;
-        if(temp == NULL)
-        {
-            cout<<"LL is empty!"<<endl;
-            return;
-        }
-        if(temp -> next == temp)
-        {
-            head = NULL;
-            tail = NULL;
-            free(temp);
-            return;
-        }
-        int count = 0;
+		prev = curr; 
+		curr = curr->next; 
+	} 
 
-        //Traverse to the node to be deleted
-        while(count != index - 1 && temp->next != tail)
-        {
-            temp = temp -> next;
-            count++;
-        }
+	// Check if node is only node 
+	if (curr->next == head) { 
+		head = NULL; 
+		free(curr); 
+		return; 
+	} 
 
-        //If node to be deleted is the next node
-        if(count == index - 1)
-        {
-            Node* temp1 = temp->next;
-            temp->next = temp1->next;
-            if(temp1 == tail)
-            {
-                tail = temp;
-            }
-            free(temp1);
-        }
+	// If more than one node, check if 
+	// it is first node 
+	if (curr == head) { 
+		prev = head; 
+		while (prev->next != head) 
+			prev = prev->next; 
+		head = curr->next; 
+		prev->next = head; 
+		free(curr); 
+	} 
 
-        //If last node has been reached but index has not been found
-        if(temp->next == tail && count!=index-1)
-        {
-            cout<<"Index out of bounds!"<<endl;
-            return;
-        }
+	// check if node is last node 
+	else if (curr->next == head) { 
+		prev->next = head; 
+		free(curr); 
+	} 
+	else { 
+		prev->next = curr->next; 
+		free(curr); 
+	} 
+} 
 
-    }
+/* Driver program to test above functions */
+int main() 
+{ 
+	/* Initialize lists as empty */
+	struct Node* head = NULL; 
 
-    //Delete last node
-    void deleteFromEnd()
-    {
-        Node* temp = head;
+	/* Created linked list will be 2->5->7->8->10 */
+	push(&head, 2); 
+	push(&head, 5); 
+	push(&head, 7); 
+	push(&head, 8); 
+	push(&head, 10); 
 
-        //If LL is empty
-        if(temp == NULL)
-        {
-            cout<<"LL is empty"<<endl;
-            return;
-        }
+	printf("List Before Deletion: "); 
+	printList(head); 
 
-        //If LL has just one element
-        else if(temp -> next == temp)
-        {
-            head = NULL;
-            tail = NULL;
-            free(temp);
-            return;
-        }
+	deleteNode(head, 7); 
 
-        //Otherwise
-        while(temp -> next != tail)
-        {
-            temp = temp -> next;
-        }
-        Node* temp1 = temp->next;
-        temp -> next = temp1 -> next;
-        tail = temp;
-        free(temp1);
+	printf("List After Deletion: "); 
+	printList(head); 
 
-    }
-    //To display the CLL
-    void display()
-    {
-      Node* temp = head;
-      if(temp == NULL)
-      {
-          cout<<"Empty LL!"<<endl;
-          return;
-      }
-      cout<<temp->data<<" ";
-      temp = temp->next;
-      while(temp != head)
-      {
-        cout<<temp->data<<" ";
-        temp = temp->next;
-      }
-      cout<<endl;
-    }
+	return 0; 
+} 
 
-  };
-  int main()
-  {
-    int test_cases;
-    cout<<"Enter number of test cases:"<<endl;
-    cin>>test_cases;
-    while(test_cases--)
-    {
-      cout<<"Enter number of elements:"<<endl;
-      int n;
-      cin>>n;
-      int index;
-      CLL* linkedList = new CLL();
-      cout<<"Enter elements: "<<endl;
-      while(n--)
-      {
-        int data;
-        cin>>data;
-
-        linkedList->insertAtEnd(data);
-      }
-      cout<<"Current LL is:"<<endl;
-      linkedList -> display();
-      cout<<"Deleting first node:"<<endl;
-      linkedList -> deleteFromBeg();
-      linkedList -> display();
-      cout<<"Enter index to delete element from (0-based indexing):"<<endl;
-      cin>>index;
-      cout<<"Deleting node at index "<<index<<":"<<endl;
-      linkedList -> deleteFromMid(index);
-      linkedList -> display();
-      cout<<"Deleting last node:"<<endl;
-      linkedList -> deleteFromEnd();
-      linkedList -> display();
-    }
-
-    return 0;
-  }
