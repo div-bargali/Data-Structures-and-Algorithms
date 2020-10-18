@@ -6,7 +6,7 @@ type queue struct {
 	data []int
 }
 
-//return true if queue is empty
+// Return true if queue is empty
 func (q *queue) isEmpty() bool {
 	return len(q.data) == 0
 }
