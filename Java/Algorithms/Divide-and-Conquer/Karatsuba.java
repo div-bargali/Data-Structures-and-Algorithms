@@ -53,6 +53,7 @@ public class Karatsuba
 		//(xr+xl)(yr+yl) - xlyl - xryr =  xlyr + ylxr
 		
         return xlyl*pow10(2*l) +   (karatsuba(xr+xl,yr+yl) - xlyl - xryr)*pow10(l)    + xryr;
+		
     }
     
 	public static void main(String[] args) {
