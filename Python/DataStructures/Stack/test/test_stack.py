@@ -1,7 +1,7 @@
 import unittest
 from Python.DataStructures.Stack.stack import Stack
 
-class TestStringMethods(unittest.TestCase):
+class TestStack(unittest.TestCase):
 
     def test_stack_is_empty_on_initialization(self):
         s = Stack()
