@@ -79,6 +79,7 @@ public class BellmanFord {
     }
 
     public static void main(String[] args) {
+        // Print out the graph matrix with the shortest paths to each node of this graph
         System.out.println(Arrays.deepToString(bellmanFord(new int[][]{
                 {0, 2, 2, 2, -1},
                 {9, 0, 2, 2, -1},
