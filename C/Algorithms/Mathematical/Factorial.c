@@ -1,5 +1,5 @@
 /***************************************************************
- *				Factorial Algotihm
+ *				Factorial Algorithm
  *
  * Mathematical explanation:
  *		The factorial function has the following format:
@@ -15,13 +15,12 @@
  * 		factorial(n) - calculates the factorial to the index `n`
  *		example()	 - example of how factorial function works
  ***************************************************************/
-
 #include <stdio.h>
 
 int factorial(int index)
 {
-    if (index == 0) return 1;				///< Zero case
-    else return index*factorial(index - 1);	///< General case
+    if (index == 0) return 1;				///< zero case
+    else return index*factorial(index - 1);	///< general case
 }
 
 void example()
