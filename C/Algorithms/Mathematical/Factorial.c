@@ -1,6 +1,6 @@
 /***************************************************************
- *				Factorial Algorithm
- *
+ *						Factorial Algorithm
+ ***************************************************************
  * Mathematical explanation:
  *		The factorial function has the following format:
  *			factorial(n) = !n = n.!(n-1) = n.(n-1).(n-2). ... !0
