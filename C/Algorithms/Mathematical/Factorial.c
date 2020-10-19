@@ -1,6 +1,6 @@
-/***************************************************************
- *						Factorial Algorithm
- ***************************************************************
+/**
+ *					Factorial Algorithm
+ *
  * Mathematical explanation:
  *		The factorial function has the following format:
  *			factorial(n) = !n = n.!(n-1) = n.(n-1).(n-2). ... !0
@@ -14,12 +14,12 @@
  * Code explanation:
  * 		factorial(n) - calculates the factorial to the index `n`
  *		example()	 - example of how factorial function works
- ***************************************************************/
+ */
 #include <stdio.h>
 
 int factorial(int index)
 {
-    if (index == 0) return 1;				///< zero case
+    if (index == 0) return 1;	///< zero case
     else return index*factorial(index - 1);	///< general case
 }
 
