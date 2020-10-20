@@ -1,6 +1,6 @@
 //
-//  Queue.swift
-//  Queue
+//  Stack.swift
+//  Stack
 //
 //  Created by Stevhen on 19/10/20.
 //
@@ -40,14 +40,12 @@ public class DoubleLinkedList<T> {
         
         let curr = Node(value: value)
         
-        if let tailNode = tail {
-            curr.prev = tailNode
-            tailNode.next = curr
-        } else {
-            head = curr
+        if let headNode = head {
+            headNode.prev = curr
+            curr.next = headNode
         }
         
-        tail = curr
+        head = curr
     }
     
     public func getNode(index: Int) -> Node<T>? {
@@ -107,7 +105,7 @@ public class DoubleLinkedList<T> {
 }
 
 
-public struct Queue<T> {
+public struct Stack<T> {
     
     fileprivate var list = DoubleLinkedList<T>()
     
@@ -115,11 +113,11 @@ public struct Queue<T> {
         return list.isEmpty
     }
     
-    public mutating func enqueue(_ element: T){
+    public mutating func push(_ element: T){
         list.push(value: element)
     }
     
-    public mutating func dequeue() -> T? {
+    public mutating func pop() -> T? {
         guard !list.isEmpty, let element = list.first else { return nil }
         
         let removedElement = list.pop(curr: element)
@@ -139,30 +137,32 @@ public struct Queue<T> {
         return list.getNode(index: index)
     }
     
-    public func dequeueAll(){
+    public func popAll(){
         list.popAll()
     }
 
 }
 
-public class BookStoreCustomer {
-    var queueId: String
-    var bookQty: Int
+public class Book {
+    var stackId: String
+    var bookName: String
     
-    init(queueId: String, bookQty: Int) {
-        self.queueId = queueId
-        self.bookQty = bookQty
+    init(stackId: String, bookName: String) {
+        self.stackId = stackId
+        self.bookName = bookName
     }
 }
 
 //Main Program
-public func enqueueBuyer(){
-    print("Enter queue id: ", terminator: "")
-    let queueId: String? = readLine()
-    print("Enter book quantity to buy: ", terminator: "")
-    let bookQty: Int? = Int(readLine()!)
+public func pushBook(){
+    print("Enter book id: ", terminator: "")
+    let stackId: String? = readLine()
+    print("Enter book name: ", terminator: "")
+    let bookName: String? = readLine()
 
-    queue.enqueue(BookStoreCustomer(queueId: queueId!, bookQty: bookQty!))
+    stack.push(Book(stackId: stackId!, bookName: bookName!))
+    
+    print("Book with \(stackId!) added to stack")
 }
 
 public func clrScr(){
@@ -178,66 +178,66 @@ public func separatorBar(length : Int){
     print("")
 }
 
-public func showQueue(){
+public func showStack(){
 
-    if queue.isEmpty {
+    if stack.isEmpty {
         print("No data yet")
     }
     else{
-        let header: String = String(format: "| %-4s | %-12s | %-10s |", ("No" as NSString).utf8String!,("ID" as NSString).utf8String!, ("Quantity" as NSString).utf8String!)
+        let header: String = String(format: "| %-4s | %-12s | %-15s |", ("No" as NSString).utf8String!,("ID" as NSString).utf8String!, ("Book Name" as NSString).utf8String!)
         
         separatorBar(length: header.count)
         print(header)
         separatorBar(length: header.count)
-        for i in 0 ..< queue.getSize()  {
-            let curr = queue.peekAt(index: i)
-            print(String(format: "| %-4d | %-12s | %-10d |", i+1, (curr!.value.queueId as NSString).utf8String!, curr!.value.bookQty))
+        for i in 0 ..< stack.getSize()  {
+            let curr = stack.peekAt(index: i)
+            print(String(format: "| %-4d | %-12s | %-15s |", i+1, (curr!.value.stackId as NSString).utf8String!, (curr!.value.bookName as NSString).utf8String!))
         }
         separatorBar(length: header.count)
     }
 
 }
 
-public func dequeueBuyer(){
-    if queue.isEmpty {
+public func popBook(){
+    if stack.isEmpty {
        print("No data yet")
    }
    else{
-        if let buyer = queue.dequeue() {
-            print("Buyer with ID: \(buyer.queueId) served")
+        if let buyer = stack.pop() {
+            print("Book with ID: \(buyer.stackId) taken from stack")
         }
     }
 }
 
-public func dequeueAllBuyer(){
-    queue.dequeueAll()
+public func popAllBook(){
+    stack.popAll()
     
-    print("All Buyer served")
+    print("All Book taken from stack")
 }
 
-var queue = Queue<BookStoreCustomer>()
+var stack = Stack<Book>()
 
 //Dummy data
-queue.enqueue(BookStoreCustomer(queueId: "Q12", bookQty: 2))
-queue.enqueue(BookStoreCustomer(queueId: "Q14", bookQty: 3))
-queue.enqueue(BookStoreCustomer(queueId: "Q16", bookQty: 4))
+stack.push(Book(stackId: "S15", bookName: "Algorithms II"))
+stack.push(Book(stackId: "S17", bookName: "Mathematics I"))
+stack.push(Book(stackId: "S19", bookName: "Accounting I"))
 
 while true {
 
     clrScr()
     var choose: Int! = 0;
 
-    print("Buying Book Queue Program")
+    print("Pile of Book Program")
     print("=====================")
-    if let nextCustomer = queue.peek() {
-        print("Next Queue ID to Serve: \(nextCustomer.queueId)")
+    if let nextBook = stack.peek() {
+        print("Next Book ID to take: \(nextBook.stackId)")
         print("=====================")
     }
     print("Menu")
-    print("1. Queue Buyer")
+    print("1. Stack Book")
     print("2. Show")
-    print("3. Serve Buyer")
-    print("4. Serve All Buyer")
+    print("3. Take Book")
+    print("4. Take All Book")
     print("5. Exit")
 
     repeat {
@@ -249,13 +249,13 @@ while true {
 
     switch choose {
         case 1:
-            enqueueBuyer()
+            pushBook()
         case 2:
-            showQueue()
+            showStack()
         case 3:
-            dequeueBuyer()
+            popBook()
         case 4:
-            dequeueAllBuyer()
+            popAllBook()
         case 5:
             print("Thank you for using this program :)")
         default:
