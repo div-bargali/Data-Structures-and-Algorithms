@@ -27,7 +27,7 @@ float fractionalKnapsack(int W, struct Item a[], int n)
 
     for (int i = 0; i < n; i++)
     {
-        // If adding Item won't overflow, add it completely
+        // If adding Item won't overflow, add it completely and want to change it
         if (current_weight + a[i].weight <= W)
         {
             current_weight += a[i].weight;
