@@ -1,21 +1,21 @@
 //
-//  DoubleLinkedList.swift
-//  DoubleLinkedList
+//  SingleLinkedList.swift
+//  SingleLinkedList
 //
 //  Created by Stevhen on 19/10/20.
 //
 
 import Foundation
 
-public class Student {
+public class Book {
     var id: String
-    var name: String
-    var age: Int
+    var title: String
+    var author: String
     
-    init(id: String, name: String, age: Int){
+    init(id: String, title: String, author: String){
         self.id = id
-        self.name = name
-        self.age = age
+        self.title = title
+        self.author = author
     }
 }
 
@@ -28,11 +28,10 @@ public class Node<T> {
     }
     
     var next: Node<T>?
-    weak var prev: Node<T>?
 }
 
 //Data Structure logics
-public class DoubleLinkedList<T> {
+public class SingleLinkedList<T> {
     fileprivate var head: Node<T>?
     private var tail: Node<T>?
     
@@ -53,7 +52,6 @@ public class DoubleLinkedList<T> {
         let curr = Node(value: value)
         
         if let tailNode = tail {
-            curr.prev = tailNode
             tailNode.next = curr
         } else {
             head = curr
@@ -80,7 +78,7 @@ public class DoubleLinkedList<T> {
     
     public func getSize() -> Int{
         var curr = head
-        var  i: Int = 0
+        var i: Int = 0
         
         while curr != nil {
             i += 1
@@ -91,23 +89,32 @@ public class DoubleLinkedList<T> {
     }
     
     public func pop(curr: Node<T>) -> T {
-        let prev = curr.prev
-        let next = curr.next
         
-        if let prev = prev {
-            prev.next = next
-        } else {
-            head = next
+        var newCurr = head
+        
+        if(head === tail) {
+            popAll()
         }
-        
-        next?.prev = prev
-        
-        if next == nil {
-            tail = prev
+        else if first === curr {
+            head = head?.next
+            curr.next = nil
         }
-        
-        curr.prev = nil
-        curr.next = nil
+        else if(last === curr) {
+            while newCurr?.next !== tail {
+                newCurr = newCurr?.next
+            }
+            
+            newCurr?.next = nil
+            tail = newCurr
+        }
+        else{
+            while newCurr?.next !== curr {
+                newCurr = newCurr?.next
+            }
+            
+            newCurr?.next = newCurr?.next?.next
+            curr.next = nil
+        }
         
         return curr.value
     }
@@ -119,15 +126,15 @@ public class DoubleLinkedList<T> {
 }
 
 //Main Program
-public func addStudent(){
-    print("Enter Student id: ", terminator: "")
+public func addBook(){
+    print("Enter Book id: ", terminator: "")
     let id: String? = readLine()
-    print("Enter Student name: ", terminator: "")
-    let name: String? = readLine()
-    print("Enter Student age: ", terminator: "")
-    let age: Int? = Int(readLine()!)
+    print("Enter Book title: ", terminator: "")
+    let title: String? = readLine()
+    print("Enter Book author: ", terminator: "")
+    let author: String? = readLine()
     
-    list.push(value: Student(id: id!, name: name!, age: age!))
+    list.push(value: Book(id: id!, title: title!, author: author!))
 }
 
 public func clrScr(){
@@ -137,43 +144,42 @@ public func clrScr(){
 }
 
 public func separatorBar(){
-    for _ in 1...45 {
+    for _ in 1...53 {
         print("=", terminator: "")
     }
     print("")
 }
 
-public func showStudent(){
+public func showBook(){
     
-    if list.isEmpty {
+    if list.getSize() <= 0 {
         print("No data yet")
     }
     else{
         separatorBar()
-        print(String(format: "| %-4s | %-12s | %-12s | %-4s |", ("No" as NSString).utf8String!,("ID" as NSString).utf8String!, ("Name" as NSString).utf8String!, ("Age" as NSString).utf8String!))
+        print(String(format: "| %-4s | %-12s | %-12s | %-12s |", ("No" as NSString).utf8String!,("ID" as NSString).utf8String!, ("Title" as NSString).utf8String!, ("Author" as NSString).utf8String!))
         separatorBar()
         for i in 0..<list.getSize() {
             let curr = list.getNode(index: i)
-            print(String(format: "| %-4d | %-12s | %-12s | %-4d |", i+1, (curr!.value.id as NSString).utf8String!, (curr!.value.name as NSString).utf8String!, curr!.value.age))
+            print(String(format: "| %-4d | %-12s | %-12s | %-12s |", i+1, (curr!.value.id as NSString).utf8String!, (curr!.value.title as NSString).utf8String!, (curr!.value.author as NSString).utf8String!))
         }
         separatorBar()
     }
     
 }
 
-public func removeStudent(){
+public func removeBook(){
     if list.isEmpty {
        print("No data yet")
    }
    else{
         var pos: Int! = -1
 
-        print("Remove Student")
-        showStudent()
+        print("Remove Book")
+        showBook()
 
         print("")
         print("Enter number to remove: ", terminator: "")
-        
         repeat {
             if let str = readLine(){
                 pos = Int(str)!
@@ -181,30 +187,30 @@ public func removeStudent(){
         } while pos < 1 || pos > list.getSize();
         pos -= 1
 
-        let student = list.pop(curr: list.getNode(index: pos)!)
+        let book = list.pop(curr: list.getNode(index: pos)!)
 
-        print("Student with ID: \(student.id) removed")
+        print("Book with ID: \(book.id) removed")
     }
 }
 
-public func removeAllStudent(){
+public func removeAllBook(){
     list.popAll()
-    print("All Student removed")
+    print("All Book removed")
 }
 
-let list = DoubleLinkedList<Student>()
+let list = SingleLinkedList<Book>()
 
 //Dummy data
-list.push(value: Student(id: "1234567891", name: "Andy", age: 19))
-list.push(value: Student(id: "1234567892", name: "Clarissa", age: 20))
-list.push(value: Student(id: "1234567893", name: "Robert", age: 19))
+list.push(value: Book(id: "PS4212", title: "Psychology I", author: "Patrick B."))
+list.push(value: Book(id: "AC5233", title: "Accounting I", author: "Benjamin C."))
+list.push(value: Book(id: "CS1242", title: "Algorithm II", author: "Colitta K."))
 
 while true {
     
     clrScr()
     var choose: Int! = 0;
     
-    print("Students List Program")
+    print("Books List Program")
     print("=====================")
     print("Menu")
     print("1. Add")
@@ -222,13 +228,13 @@ while true {
     
     switch choose {
         case 1:
-            addStudent()
+            addBook()
         case 2:
-            showStudent()
+            showBook()
         case 3:
-            removeStudent()
+            removeBook()
         case 4:
-            removeAllStudent()
+            removeAllBook()
         case 5:
             print("Thank you for using this program :)")
         default:
