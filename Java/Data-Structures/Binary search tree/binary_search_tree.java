@@ -141,7 +141,6 @@ class bstree{
 
     }
 }
-//  distinct values only
 public class binary_search_tree{
     public static void main(String [] arrrr){
         Scanner wow = new Scanner(System.in);
