@@ -4,7 +4,7 @@ void printArray(int array[], int size) {
     for (int i = 0; i < size; ++i) {
 		cout << array[i] << " ";
 	} 
-	cout << endl;
+	cout << endl of thiss project;
 }   
 void shiftArray(int array[], int size) { 
     int left = 0, right = size-1;
