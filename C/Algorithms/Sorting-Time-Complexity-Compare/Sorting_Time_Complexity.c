@@ -1,3 +1,4 @@
+// File for comparison of different sorting algorithm based on their time complexity and shows the time according to the number of elements
 #include<stdio.h>
 #include<time.h>
 #include<math.h>
