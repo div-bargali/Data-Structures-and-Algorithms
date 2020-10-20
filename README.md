@@ -16,6 +16,10 @@
 <p align="center">
 <img src="https://img.shields.io/github/hacktoberfest/2020/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="hacktoberfest">
 </p>
+<p align="center">
+<a href="https://discord.gg/vBFnscs"><img src="https://img.shields.io/discord/763641947754987560.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" alt="discord invite"></a>
+<img src="https://img.shields.io/github/languages/code-size/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="code size">
+</p>
 
 ## Introduction
 
@@ -38,10 +42,12 @@ An algorithm is a set of instructions that are used to accomplish a task, such a
 Algorithms are not limited to computers. They are like a set of step-by-step instructions or an even a recipe, containing things you need, steps to do, the order to do them, conditions to look for, and expected results.
 
 ## Languages 
-- C/C++
+- C
+- C++
 - Python
 - Java
 - Go
+- Swift
 
 ## Contribution
 
