@@ -239,7 +239,7 @@ void display(List *list)
                 it = it->next;
             }
             printf("%f<->", it->value);
-            printf("<-...\n");
+            printf("<-...");
         }
     }
 }
