@@ -16,6 +16,7 @@ public:
             arr[i] = 0;
         }
     }
+    //check stack is empty or not
     bool isempty()
     {
         if (top == -1)
@@ -23,6 +24,7 @@ public:
         else
             return false;
     }
+    //check stack is full or not
     bool isfull()
     {
         if (top == 4)
@@ -30,6 +32,7 @@ public:
         else
             return false;
     }
+    //push the element in stack
     void push(int val)
     {
         if (isfull())
@@ -42,6 +45,7 @@ public:
             arr[top] = val;
         }
     }
+    //pop the element from stack
     int pop()
     {
         if (isempty())
@@ -57,6 +61,7 @@ public:
         }
         
     }
+    //found element is present in which position in stack
     int peek(int pos)
     {
         if (isempty())
@@ -69,14 +74,17 @@ public:
             return arr[pos];
         }
     }
+    
     int count()
     {
         return (top + 1);
     }
+    //change the value of element present in stack 
     void change(int pos, int val)
     {
         arr[pos] = val;
     }
+    //display the element present in stack
     void display()
     {
         cout << "all value in the stack are " << endl;
@@ -160,4 +168,4 @@ int main()
 
     return 0;
 }
-//contributer-
+//contributor-satyam kumar
