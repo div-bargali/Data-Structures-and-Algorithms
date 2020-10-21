@@ -13,8 +13,8 @@
 // structure of a node
 typedef struct list
 {
-    double value;   ///< value stored in the node
-    struct list *next, *prev; ///< next/previous node pointing
+    double value;              ///< value stored in the node
+    struct list *next, *prev;  ///< next/previous node pointing
 } List;
 
 // create list function
@@ -108,7 +108,6 @@ List *insertPos(List *list, double value, int pos)
         // position in list range case
         if (it + 2 > pos)
         {
-
             // last position case
             if (prior == list->prev && it < pos)
                 list = insertEnd(list, value);
@@ -132,10 +131,15 @@ List *deleteBegin(List *list)
 {
     if (list != NULL)
     {
-        List *tmp = list;
-        list = list->next;
-        tmp->prev->next = list;
-        list->prev = tmp->prev;
+        if(length(list) == 1)
+            return NULL;
+        else
+        {
+            List *tmp = list;
+            list = list->next;
+            tmp->prev->next = list;
+            list->prev = tmp->prev;
+        }
     }
     return list;
 }
@@ -145,9 +149,14 @@ List *deleteEnd(List *list)
 {
     if (list != NULL)
     {
-        List *tmp = list->prev;
-        tmp->prev->next = list;
-        list->prev = tmp->prev;
+        if (length(list) == 1)
+            return NULL;
+        else
+        {
+            List *tmp = list->prev;
+            tmp->prev->next = list;
+            list->prev = tmp->prev;
+        }     
     }
     return list;
 }
@@ -157,15 +166,20 @@ List *deleteAfter(List *list, double value)
 {
     if (list != NULL)
     {
-        List *prior = list;
-        while (prior->value != value && prior != list->prev)
-            prior = prior->next;
-
-        if (prior != list->prev && prior->value == value)
+        if (length(list) == 1)
+            return NULL;
+        else
         {
-            List *tmp = prior->next;
-            tmp->next->prev = prior;
-            prior->next = tmp->next;
+            List *prior = list;
+            while (prior->value != value && prior != list->prev)
+                prior = prior->next;
+
+            if (prior != list->prev && prior->value == value)
+            {
+                List *tmp = prior->next;
+                tmp->next->prev = prior;
+                prior->next = tmp->next;
+            }
         }
     }
     return list;
@@ -188,17 +202,20 @@ List *deletePos(List *list, int pos)
             prior = prior->next;
             it++;
         }
-
-        // last position case
-        if (prior == list->prev && it == pos)
-            list = deleteEnd(list);
-
-        // general case
-        else
+        
+        if(it + 1 > pos)
         {
-            List *tmp = prior->next;
-            prior->prev->next = tmp;
-            tmp->prev = prior->prev;
+            // last position case
+            if (prior == list->prev && it == pos)
+                list = deleteEnd(list);
+    
+            // general case
+            else
+            {
+                List *tmp = prior->next;
+                prior->prev->next = tmp;
+                tmp->prev = prior->prev;
+            }
         }
     }
     return list;
@@ -225,7 +242,9 @@ int search(List *list, double value)
 // print the circular doubly linked list
 void display(List *list)
 {
-    if (list != NULL)
+    if (list == NULL)
+        printf("\n...-><-...");
+    else
     {
         List *it = list;
         printf("\n...->");
@@ -244,10 +263,29 @@ void display(List *list)
     }
 }
 
+// list length
+int length(List *list)
+{
+    if(list == NULL)
+        return 0;
+    else
+    {
+        List *tmp = list;
+        int length = 1;
+        while (tmp != list->prev)
+        {
+            length++;
+            tmp = tmp->next;
+        }
+        return length;
+    }
+}
+
 // example function, it shows up how the code works.
 void example()
 {
     List *my_list = NULL;
+    display(my_list);
 
     my_list = create(0);
     display(my_list);
@@ -271,6 +309,9 @@ void example()
     display(my_list);
 
     my_list = deleteAfter(my_list, 100);
+    display(my_list);
+
+    my_list = deletePos(my_list, 4);
     display(my_list);
 
     my_list = deletePos(my_list, 1);
