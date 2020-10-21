@@ -131,8 +131,11 @@ List *deleteBegin(List *list)
 {
     if (list != NULL)
     {
-        if(length(list) == 1)
+        // one node case
+        if(list == list->next)
             return NULL;
+            
+        // general case
         else
         {
             List *tmp = list;
@@ -149,8 +152,11 @@ List *deleteEnd(List *list)
 {
     if (list != NULL)
     {
-        if (length(list) == 1)
+        // one node case
+        if (list == list->next)
             return NULL;
+        
+        // general case
         else
         {
             List *tmp = list->prev;
@@ -166,8 +172,11 @@ List *deleteAfter(List *list, double value)
 {
     if (list != NULL)
     {
-        if (length(list) == 1)
+        // one node case
+        if (list == list->next)
             return NULL;
+            
+        // general case
         else
         {
             List *prior = list;
@@ -314,6 +323,11 @@ void example()
     my_list = deletePos(my_list, 4);
     display(my_list);
 
+    my_list = deletePos(my_list, 1);
+    display(my_list);
+
+    printf("\n%d\t%d", search(my_list, 100), search(my_list, 0));
+    
     my_list = deletePos(my_list, 1);
     display(my_list);
 
