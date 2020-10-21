@@ -1,70 +1,163 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 
-template<typename T>
-class StackUsingArray {
-	T *data;
-	int nextIndex;
-	int capacity;
+class stack
+{
+    int top;
+    int arr[5];
+
 public:
-	StackUsingArray() {
-		data = new T[capacity];
-		capacity = 4;
-		nextIndex = 0;
-	}
-	int size() {
-		return nextIndex;
-	}
-	bool isEmpty() {
-		return nextIndex == 0;
-	}
-	void push(T n) {
-		if (nextIndex == capacity) {
-			T *newData = new T[2 * capacity];
-			for (int i = 0; i < capacity; i++) {
-				newData[i] = data[i];
-			}
-			capacity = capacity * 2;
-			delete[] data;
-			data = newData;
-
-		}
-		data[nextIndex] = n;
-		nextIndex++;
-	}
-	T pop() {
-		if (isEmpty() == true) {
-			cout << "Stack is empty" << endl;
-			return 0;
-		}
-		nextIndex--;
-		return data[nextIndex];
-	}
-	T top() {
-		return data[nextIndex - 1];
-	}
-
+    stack()
+    {
+        top = -1;
+        for (int i = 0; i < 5; i++)
+        {
+            arr[i] = 0;
+        }
+    }
+    bool isempty()
+    {
+        if (top == -1)
+            return true;
+        else
+            return false;
+    }
+    bool isfull()
+    {
+        if (top == 4)
+            return true;
+        else
+            return false;
+    }
+    void push(int val)
+    {
+        if (isfull())
+        {
+            cout << "stack overflow " << endl;
+        }
+        else
+        {
+            top++;
+            arr[top] = val;
+        }
+    }
+    int pop()
+    {
+        if (isempty())
+        {
+            cout << "stack underflow " << endl;
+        }
+        else
+        {
+            int popvalue = arr[top];
+            arr[top] = 0;
+            top--;
+            return popvalue;
+        }
+        
+    }
+    int peek(int pos)
+    {
+        if (isempty())
+        {
+            cout << "stack underflow " << endl;
+            return 0;
+        }
+        else
+        {
+            return arr[pos];
+        }
+    }
+    int count()
+    {
+        return (top + 1);
+    }
+    void change(int pos, int val)
+    {
+        arr[pos] = val;
+    }
+    void display()
+    {
+        cout << "all value in the stack are " << endl;
+        for (int i = 0; i < 4; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout<<endl;
+    }
 };
-int main() {
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
 
-	StackUsingArray<int> s;
-	s.push(101);
-	s.push(102);
-	s.push(103);
-	s.push(104);
-	s.push(105);
+int main()
+{
+    stack s1;
+    int position, value, option;
+    do
+    {
+        cout << "what operation do you perform ?select option number .enter 0 to exit " << endl;
 
+        cout << "1. push()" << endl;
+        cout << "2. pop()" << endl;
+        cout << "3. peek()" << endl;
+        cout << "4. isempty()" << endl;
+        cout << "5. isfull()" << endl;
+        cout << "6. count()" << endl;
+        cout << "7. change()" << endl;
+        cout << "8. display()" << endl;
+        cout << "9. clear screen()" << endl;
+        cin >> option;
+        switch (option)
+        {
+            break;
+        case 1:
+            cout << "enter the value to push in stack " << endl;
+            cin >> value;
+            s1.push(value);
+            break;
+        case 2:
+            cout << "pop function called ,poped value is " << s1.pop() << endl;
+            break;
+        case 3:
+            cout << "enter position of item you want to peek " << endl;
+            cin >> position;
+            cout << "peek function is called , value at position " << position << " is " << s1.peek(position) << endl;
+            break;
+        case 4:
+            if (s1.isempty())
+                cout << "stack is empty " << endl;
+            else
+                cout << "stack is full " << endl;
+            break;
+        case 5:
+            if (s1.isfull())
+                cout << " stack is full " << endl;
+            else
+                cout << " stack is empty " << endl;
+            break;
+        case 6:
+            cout << " count function is called , number if item in stack are " << s1.count() << endl;
+            break;
+        case 7:
+            cout << "change function is called " << endl;
+            cout << " enter the position of item you want to change " << endl;
+            cin >> position;
+            cout << endl;
+            cout << "enter the value of item you want to change " << endl;
+            cin >> value;
+            s1.change(position, value);
+            break;
+        case 8:
+            cout << "display function is called " << endl;
+            s1.display();
+            break;
+        case 9:
+            system("cls");
+        default:
+            cout << "enter proper option number " << endl;
+            break;
+        }
+    } while (option != 0);
 
-	cout << s.size() << endl;
-	cout << s.top() << endl;
-	cout << s.pop() << endl;
-	cout << s.pop() << endl;
-	cout << s.pop() << endl;
-	cout << s.pop() << endl;
-	cout << s.pop() << endl;
-	return 0;
+    return 0;
 }
+//contributer-
