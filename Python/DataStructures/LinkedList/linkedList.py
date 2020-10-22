@@ -108,6 +108,13 @@ class LinkedList:
 
 		prevNode.next = ThisNode.next
 		ThisNode = None
+	
+	def reverseLL(self,node):
+		if node == None:
+			return 
+		reverseLL(node.next)
+		print(node.data)
+		
 
 
 
@@ -117,12 +124,13 @@ def Menu():
 	print("2: Find an Item")
 	print("3: delete an Item")
 	print("4: Display all elements")
-	print("5: Exit")
+	print("5: Display list in reverse")
+	print("6: Exit")
 	choice = int(input("Enter your choice.. "))
 
-	while choice <1 or choice >5:
+	while choice <1 or choice >6:
 		print("")
-		print("Enter between 1 and 5 (inclusive)")
+		print("Enter between 1 and 6 (inclusive)")
 		choice = int(input("Enter your choice.. "))
 		print("")
 
@@ -166,12 +174,20 @@ def operation(choice, myList):
 		print("")
 		myList.printAll()
 		print("")
+		
+	elif choice == 5:
+		print("")
+		if mylist.head == None:
+			print("List is empty")
+		else:
+			myList.reverseLL(myList.head)
+			print("")
 
 if __name__ == "__main__":
 
 	myList = LinkedList()
 	choice = Menu()
 
-	while choice != 5:
+	while choice != 6:
 		operation(choice, myList)
 		choice = Menu()
