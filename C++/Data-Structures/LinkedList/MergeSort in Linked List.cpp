@@ -1,4 +1,4 @@
-/* This program will sort a linked list in nlog(n) time using merge sort. There are certain helper functions like merging two sorted linked lists, breaking a linked list into two equal sized linked lists for the recursion, inserting in the linked list, and printing the linked list.
+/* This program will sort a linked list in nlog(n) time using merge sort. There are certain helper functions like merging two sorted linked lists, breaking a linked list into two equal sized linked lists for the recursion, inserting in the linked list, and printing the linked list.*/
 
 
 #include<bits/stdc++.h>
