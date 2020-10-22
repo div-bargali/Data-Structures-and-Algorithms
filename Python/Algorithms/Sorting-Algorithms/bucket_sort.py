@@ -1,3 +1,4 @@
+# Bucket sort Python
 def insertionSort(b): 
     for i in range(1, len(b)): 
         up = b[i] 
@@ -31,7 +32,8 @@ def bucketSort(x):
             x[k] = arr[i][j] 
             k += 1
     return x 
-
+    
+# Driver code
 array = [0.678, 0.312, 0.912, 0.555, 0.432]
 print("Array is: ")
 print(array)
