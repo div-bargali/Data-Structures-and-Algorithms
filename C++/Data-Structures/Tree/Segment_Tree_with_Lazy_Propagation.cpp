@@ -94,11 +94,13 @@ int32_t main(){
         int q;
         cin>>q;
         if(q==1){   // update
-            ll left,right,add;
+            // left is the left index, right is the right index (0 based indexing) and add is the value to be added to the segment [left,right]
+            ll left,right,add;      
             cin>>left>>right>>add;
             update(1,0,n-1,left,right,add);
         }
         else{        // query
+            // left is the left index, right is the right index (0 based indexing) it will print the maximum value in the segment [left,right]
             ll left,right;
             cin>>left>>right;
             cout<<query(1,0,n-1,left,right)<<endl;
