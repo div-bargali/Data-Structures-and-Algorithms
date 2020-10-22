@@ -20,7 +20,7 @@ int main(void)
 	int x = 10; 
 	int n = sizeof(arr) / sizeof(arr[0]); 
 	int result = search(arr, n, x); 
-(result == -1)? cout<<"Element is not present in array"
-				: cout<<"Element is present at index " <<result; 
+(result == -1)? cout<<"Element is not present in an array"
+				: cout<<"Element is present at an index " <<result; 
 return 0; 
 } 
