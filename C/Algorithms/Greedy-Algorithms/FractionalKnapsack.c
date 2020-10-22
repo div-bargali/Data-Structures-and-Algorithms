@@ -1,3 +1,11 @@
+//FRACTIONAL KNAPSACK PROBLEM IN C
+/*Given weights and values of n items, 
+we need to put these items in a knapsack of capacity W
+to get the maximum total value in the knapsack.
+In Fractional Knapsack, we can break items for maximizing
+the total value of knapsack. This problem in which we can 
+break an item is also called the fractional knapsack problem. 
+*/
 #include<stdio.h>
 
  //Contributed By : Swati Tripathi (@swati-gwc)
