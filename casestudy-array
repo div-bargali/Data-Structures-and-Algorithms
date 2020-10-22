@@ -1,0 +1,162 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int create(char *,int ,int );
+int insert_element(char *, int );
+int delete_element(char *, int );
+void update(char *);
+void maximum(char *, int );
+void minimum(char *, int );
+void display(char * ,int );
+
+int main()
+{
+    int n, option, flag=0;
+    char arr[100];
+    char choice;
+    do
+    {
+        printf("\nEnter the number of the operation you want to perform: \
+           \n1.create an array \n2.insert an element into the array \
+           \n3.delete an element from the array \
+           \n4.update an element \n5.Find the maximum value\
+           \n6.Find the minimum value \n7.Display the array\n\n");
+        scanf("%d",&option);
+        if (flag==0 && option!=1)
+    {
+        printf("\nTo perform this operation, first you need to create an array");
+        printf("\nEnter the number of elements in  the array: ");
+        scanf("%d",&n);
+        fflush(stdin);
+        flag=create(arr,n,flag);
+
+    }
+    else
+    {
+        switch(option)
+    {
+        case 1: printf("\nEnter the number of elements in  the array: ");
+        scanf("%d",&n);
+        flag=create(arr,n,flag);
+        break;
+        case 2: n=insert_element(arr,n);
+        break;
+        case 3: n=delete_element(arr,n);
+        break;
+        case 4: update(arr);
+        break;
+        case 5:maximum(arr,n);
+        break;
+        case 6: minimum(arr,n);
+        break;
+        case 7: display(arr,n);
+        break;
+        default: printf("\nPlease enter a valid number");
+        break;
+    }
+    }
+    printf("\nDo you want to want to perform another operation? \
+           Answer in y or n: ");
+    fflush(stdin);
+    scanf("%c",&choice);
+    }while(choice=='y'||choice=='Y');
+
+}
+
+int create(char* arr,int n,int flag)
+{
+   int i;
+   printf("\nEnter the elements of the array: ");
+   for(i=0; i<n; i++)
+   {
+       fflush(stdin);
+       scanf(" %c",&arr[i]);
+   }
+   flag=1;
+   return flag;
+}
+
+int insert_element(char* arr,int n)
+{
+    int loc,i;
+    char element;
+    printf("\nEnter the position at which you want to insert the element: ");
+    scanf("%d",&loc);
+    fflush(stdin);
+    printf("\nEnter the element: ");
+    scanf("%c",&element);
+    for(i=n-1; i>=loc; i--)
+    {
+        arr[i+1]= arr[i];
+    }
+    arr[loc]=element;
+    n=n+1;
+    return n;
+}
+
+int delete_element(char* arr, int n)
+{
+    char choice;
+    if (n==0)
+    {
+        printf("The array is empty");
+        return 0;
+    }
+    else
+    {
+        int loc, i;
+        printf("\nEnter the position from which you want to delete the element: ");
+        scanf("%d",&loc);
+        for(i=loc-1; i<n; i++)
+            arr[i]=arr[i+1];
+        n=n-1;
+        return n;
+    }
+}
+
+void update(char *arr)
+{
+    int loc;
+    char element;
+    printf("\nEnter the position at which you want to update the element: ");
+    scanf("%d",&loc);
+    printf("\nEnter the new element: ");
+    fflush(stdin);
+    scanf("%c",&element);
+    arr[loc-1]=element;
+}
+
+void maximum(char* arr, int n)
+{
+    char max=arr[0];
+    int i;
+    for(i=1; i<=n; i++)
+    {
+        if (max<=arr[i])
+            max=arr[i];
+    }
+    printf("\nThe maximum value is: %c",max);
+}
+
+void minimum(char arr[], int n)
+{
+    char min=arr[0];
+    int i;
+    for(i=1; i<=n; i++)
+    {
+        if (min>=arr[i])
+            min=arr[i];
+    }
+    printf("\nThe minimum value is: %c",min);
+}
+
+void display(char arr[],int n)
+{
+    int i=0;
+    printf("\nThe array elements are: ");
+    while(i<n)
+    {
+       printf(" %c",arr[i]);
+       i=i+1;
+    }
+}
