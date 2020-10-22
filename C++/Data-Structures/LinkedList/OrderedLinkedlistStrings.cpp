@@ -1,3 +1,5 @@
+//using linked list to store strings in an order
+
 #include <iostream>
 using namespace std;
 
