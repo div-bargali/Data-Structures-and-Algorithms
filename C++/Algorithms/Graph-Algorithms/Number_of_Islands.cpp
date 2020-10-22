@@ -1,5 +1,6 @@
 /*
-Given a boolean 2D matrix of 0s and 1s , find the number of islands linking all 1s. 
+Problem link - https://www.geeksforgeeks.org/find-number-of-islands/
+Problem Statement - Given a boolean 2D matrix of 0s and 1s , find the number of islands linking all 1s. 
 
 Approach Used - DFS
 
