@@ -12,7 +12,7 @@ int main( int argc, char** argv )
  	  	return -1;
  	}
  	Mat gray_image;
- 	cvtColor( image, gray_image, COLOR_BGR2GRAY );             //convert image from grey to color
+ 	cvtColor( image, gray_image, COLOR_BGR2GRAY );             //convert image from colour to grey
  	imwrite( "/home/crmgogo/Pictures/greyImage.png", gray_image );
  	namedWindow( ImageFile, WINDOW_AUTOSIZE );	
  	namedWindow( "Gray image", WINDOW_AUTOSIZE );
