@@ -5,7 +5,7 @@ int main( int argc, char** argv )
 {
  	char* ImageFile = argv[1];	              //image file 
  	Mat image;			                     //mat object for storing data
- 	image = imread( ImageFile, IMREAD_COLOR );	         //read file
+ 	image = imread( ImageFile, IMREAD_COLOR );	         //read the image file
  	if( argc != 2 || !image.data )		
  	{
  	  	printf( " No image data \n " );
