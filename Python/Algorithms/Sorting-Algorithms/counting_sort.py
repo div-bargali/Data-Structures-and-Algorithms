@@ -1,6 +1,6 @@
 def counting_sort(A, max_val):
     """
-    This soring algorithm will only works with array length n consist of
+    This sorting algorithm will only work with array length n consist of
     elements from 0 to k for integer k < n.
     """
     k = max_val + 1
