@@ -81,18 +81,18 @@ class SplayNode(ExtendedNode):
             return True
 
 # An example for reference:
-if __name__ == "__main__":
-    t = SplayNode(5)
-    for i in [3,7,2,6,4]:
-        t.root().insert(SplayNode(i))
-    t = t.root()
-    print("Full tree:")
-    print(t)
-    t.delete(6)
-    t = t.root()
-    print("w/o 6:")
-    print(t)
-    t.delete(2)
-    t = t.root()
-    print("w/o 2:")
-    print(t)
+# if __name__ == "__main__":
+#     t = SplayNode(5)
+#     for i in [3,7,2,6,4]:
+#         t.root().insert(SplayNode(i))
+#     t = t.root()
+#     print("Full tree:")
+#     print(t)
+#     t.delete(6)
+#     t = t.root()
+#     print("w/o 6:")
+#     print(t)
+#     t.delete(2)
+#     t = t.root()
+#     print("w/o 2:")
+#     print(t)
