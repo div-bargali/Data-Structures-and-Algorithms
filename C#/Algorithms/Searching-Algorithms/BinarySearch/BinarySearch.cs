@@ -1,49 +1,39 @@
-// C# implementation of recursive Binary Search 
-using System; 
-  
-class BinarySearch { 
-    // Returns index of x if it is present in 
-    // arr[l..r], else return -1 
-    static int binarySearch(int[] arr, int l, 
-                            int r, int x) 
-    { 
-        if (r >= l) { 
-            int mid = l + (r - l) / 2; 
-  
-            // If the element is present at the 
-            // middle itself 
-            if (arr[mid] == x) 
-                return mid; 
-  
-            // If element is smaller than mid, then 
-            // it can only be present in left subarray 
-            if (arr[mid] > x) 
-                return binarySearch(arr, l, mid - 1, x); 
-  
-            // Else the element can only be present 
-            // in right subarray 
-            return binarySearch(arr, mid + 1, r, x); 
-        } 
-  
-        // We reach here when element is not present 
-        // in array 
-        return -1; 
-    } 
-  
-    // Driver method to test above 
-    public static void Main() 
-    { 
-  
-        int[] arr = { 2, 3, 4, 10, 40 }; 
-        int n = arr.Length; 
-        int x = 10; 
-  
-        int result = binarySearch(arr, 0, n - 1, x); 
-  
-        if (result == -1) 
-            Console.WriteLine("Element not present"); 
-        else
-            Console.WriteLine("Element found at index "
-                              + result); 
-    } 
-} 
+// Implementation of a generic linear search for C#
+using System;
+
+class LinearSearch { 
+	
+	// Returns the index of the searched for element if present, else returns -1  
+	public static int Search<T>(T[] arr, T itemToFind)
+	{ 
+		for (int i = 0; i < arr.Length; i++)  {
+            if (arr[i].Equals(itemToFind)) {
+                return i;
+			}
+		}
+
+		// If this point is reached then element has not been found 
+		return -1; 
+	} 
+
+	// Driver method to test above 
+	public static void Main()  { 
+
+		Console.WriteLine("Input array to search through, separated by spaces");
+
+		var arr = Console.ReadLine();
+
+		Console.WriteLine("Input item to search for");
+
+		var itemToFind = Console.ReadLine();
+
+		var result = Search(arr.Split(' '), itemToFind);
+
+		if (result == -1) 
+			Console.WriteLine("Element not present"); 
+		else
+			Console.WriteLine("Element found at index "
+								+ result); 
+	}
+	
+}
