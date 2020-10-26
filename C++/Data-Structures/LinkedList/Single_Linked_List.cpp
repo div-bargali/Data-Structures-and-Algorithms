@@ -1,5 +1,6 @@
-// A simple CPP program to introduce
-// a linked list
+// Single Linked List
+
+// A generic C++ implementation of a linked list
 #include <cstddef>
 #include <iostream>
 #include <utility>
@@ -194,6 +195,7 @@ class SingleLinkedList {
     size_t size_ = 0u;
 };
 
+// Creates a list and prints its elements
 int main() {
     // Create a likned list with 4 int's
     //     +---+---+	 +---+---+	  +---+---+     +---+---+     +---+---------+
