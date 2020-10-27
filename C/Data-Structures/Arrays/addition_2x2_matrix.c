@@ -5,6 +5,8 @@
 
 #include <stdio.h>
 int main() {
+	
+
     int a[2][2], b[2][2], sum[2][2], i, j; //a[2][2] is 1st matrix,
 	                                   //b[2][2] is 2nd matrix,
 	                                   //sum[2][2] is the resultant 
@@ -37,3 +39,4 @@ int main() {
 
     return 0;
 }
+dfgg
