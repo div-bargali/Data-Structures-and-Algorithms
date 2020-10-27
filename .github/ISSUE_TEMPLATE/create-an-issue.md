@@ -40,4 +40,4 @@ Please add/delete options that are not relevant.
 
 :star2: Star it :fork_and_knife:Fork it :handshake: Contribute to it!
 
-Happy Coding,
+Happy Coding!
