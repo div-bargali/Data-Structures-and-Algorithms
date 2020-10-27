@@ -3,6 +3,7 @@
 #include <stdio.h>
  
 int main () {
+ int j;
 
    int capacity; //aray size user input
    
