@@ -1,7 +1,7 @@
 #include<stdio.h>
 main()
 {
-	int arr[5],l,s;
+	int arr[5],l,s,int a;
 	printf("\tACCESSING THE LARGEST AND THE SMALLEST ELEMENT IN AN ARRAY\n");
 	int i;
 	printf("\nEnter 5 Elements in the Array");
