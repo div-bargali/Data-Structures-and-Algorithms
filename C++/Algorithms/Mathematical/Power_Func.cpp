@@ -2,7 +2,7 @@
 using namespace std;
 
 
-
+//These 2 functions will accept user input and return the resulting power of that user input
 
 
 //Iterative Function
