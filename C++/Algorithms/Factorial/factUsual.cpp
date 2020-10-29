@@ -1,13 +1,15 @@
+/*Calculating factorial of a number in an iterative way. Issue no-790*/
 #include <iostream>
 
 using namespace std;
 
+//function to calculate factorial
 int fact(int num)
 {
     int i, fact=1;
-    if(num<0)
+    if(num<0)               //factorial cannot be calculated for negative numbers
         return -1;
-    else if(num==0||num==1)
+    else if(num==0||num==1) //0!=1 and 1!=1
         return 1;
     else
     {
