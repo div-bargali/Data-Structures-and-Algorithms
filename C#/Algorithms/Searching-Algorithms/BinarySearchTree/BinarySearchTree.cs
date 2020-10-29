@@ -1,7 +1,9 @@
-﻿using System;
+﻿// C# implementation of a binary search tree 
+using System;
 
 namespace DataStructures
 {
+    // Will add values to thr tree and organize   
     class BinarySearchTree<T> where T : IComparable<T>
     {
         public BinarySearchTree<T> Left;
@@ -43,7 +45,8 @@ namespace DataStructures
             }
         }
 
-        public static void TestBST()
+        // Driver to test
+        public static void Main()
         {
             var bst = new BinarySearchTree<int>(69);
             bst.Add(42);
