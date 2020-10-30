@@ -1,0 +1,68 @@
+#include<stdio.h>
+
+main()
+{
+ int *a,i,itm,s,j,flag=0,low,up,mid,temp;
+ 
+ printf("==================================");
+ printf("\nC++ Program For Binary Search\n");
+ printf("==================================\n");
+ 
+ printf("\nEnter The Size Of An Array :");
+ scanf("%d",&s);
+ 
+ a=(int*)malloc(s*sizeof(int));
+ 
+ printf("\nEnter An Elements Of An Array\n");
+ for(i=0;i<s;i++)
+ {
+ scanf("%d",&a[i]);
+ }
+ 
+ for(i=1;i<s;++i)
+ {
+ for(j=0;j<(s-1);++j)
+ {
+ if(a[j]>a[j+1])
+ {
+ temp = a[j];
+ a[j] = a[j+1];
+ a[j+1] = temp;
+ }
+ }
+ }
+ printf("\nEnter The Number You Want To Search In An Array :");
+ scanf("%d",&itm);
+ 
+ low=0;
+ up=s-1;
+ mid=(low+up)/2;
+
+ 
+ if(itm<=a[mid])
+ {
+ for(i=0;i<=mid;i++)
+ {
+ if(a[i]==itm)
+ flag=1;
+ }
+ }
+ 
+ if(itm>a[mid])
+ {
+ for(i=mid;i<s;i++)
+ {
+ if(a[i]==itm)
+ flag=1;
+ }
+ }
+ 
+ if(flag==1)
+ {
+ printf("\nNumber Found In an Array \n");
+ }
+ else 
+ {
+ printf("\nNumber Not Found In an Array \n");
+ }
+}
