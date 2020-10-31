@@ -15,9 +15,9 @@ template <typename T>
 struct _SingleLinkedListNode {
     T data;
     _SingleLinkedListNode* next;
-    explicit _SingleLinkedListNode(const T& data_, _SingleLinkedListNode* n = nullptr)
+    explicit _SingleLinkedListNode(const T& data_, _SingleLinkedListNode* n = NULL)
         : data(data_), next(n) {}
-    explicit _SingleLinkedListNode(T&& data_, _SingleLinkedListNode* n = nullptr)
+    explicit _SingleLinkedListNode(T&& data_, _SingleLinkedListNode* n = NULL)
         : data(move(data_)), next(n) {}
 };
 
