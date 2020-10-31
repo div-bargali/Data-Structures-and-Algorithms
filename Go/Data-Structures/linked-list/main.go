@@ -111,10 +111,10 @@ func main() {
 	mylist.prepend(node6)
 	mylist.printListData()
 
-	// mylist.deleteWithValue(100)
-	// mylist.deleteWithValue(2)
-	mylist.deleteByIndex(2)
+	mylist.deleteWithValue(100)
+	mylist.deleteWithValue(2)
 	mylist.printListData()
+	mylist.deleteByIndex(2)
 	mylist.deleteByIndex(mylist.length - 1)
 	mylist.printListData()
 	emptyList := linkedList{}
