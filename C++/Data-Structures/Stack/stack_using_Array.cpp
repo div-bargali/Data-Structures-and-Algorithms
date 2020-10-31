@@ -54,8 +54,7 @@ int main() {
 	StackUsingArray<int> s;
 	s.push(101);
 	s.push(102);
-	s.push(103);
-	s.push(104);
+	
 	s.push(105);
 
 
