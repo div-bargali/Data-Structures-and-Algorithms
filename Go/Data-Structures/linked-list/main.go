@@ -4,7 +4,7 @@ import "fmt"
 
 type node struct {
 	data int
-	next *node // address of the next node 
+	next *node // address of the next node
 }
 
 // quotient list
@@ -43,11 +43,11 @@ func (l *linkedList) deleteWithValue(value int) {
 
 	previousToDelete := l.head
 	/*
-	We do not want to compare the data of the node in to delete,
-	we are going to	compare the data of the next node. 
-	To skip the node with the input value, we need to make modifications 
-	in the previous node next.
-	*/ 
+		We do not want to compare the data of the node in to delete,
+		we are going to	compare the data of the next node.
+		To skip the node with the input value, we need to make modifications
+		in the previous node next.
+	*/
 	for previousToDelete.next.data != value {
 		if previousToDelete.next.next == nil {
 			return
@@ -55,6 +55,43 @@ func (l *linkedList) deleteWithValue(value int) {
 		previousToDelete = previousToDelete.next
 	}
 	previousToDelete.next = previousToDelete.next.next
+	l.length--
+}
+
+func (l *linkedList) deleteByIndex(value int) {
+	if l.length == 0 {
+		return
+	}
+
+	if value >= l.length {
+		return
+	}
+
+	if value == 0 {
+		l.head = l.head.next
+		l.length--
+		return
+	}
+
+	previousNode := l.head
+	count := 0
+
+	// If i want to delete the last node
+	if value == l.length-1 {
+		for previousNode.next.next != nil {
+			previousNode = previousNode.next
+		}
+		previousNode.next = nil
+		l.length--
+		return
+	}
+
+	// Normal case
+	for count < value-1 {
+		count += 1
+		previousNode = previousNode.next
+	}
+	previousNode.next = previousNode.next.next
 	l.length--
 }
 
@@ -76,6 +113,9 @@ func main() {
 
 	mylist.deleteWithValue(100)
 	mylist.deleteWithValue(2)
+	mylist.printListData()
+	mylist.deleteByIndex(2)
+	mylist.deleteByIndex(mylist.length - 1)
 	mylist.printListData()
 	emptyList := linkedList{}
 	emptyList.deleteWithValue(10)
