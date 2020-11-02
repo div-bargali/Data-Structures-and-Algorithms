@@ -1,6 +1,5 @@
 package WAVLTree;
 
-
 public class PrintTree {
     public static void main(String[] args) {
         WAVLTree tree = new WAVLTree();
