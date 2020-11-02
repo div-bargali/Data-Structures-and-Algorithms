@@ -13,9 +13,7 @@
 <img src="https://img.shields.io/github/issues-pr/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="open pull request">
 <img src="https://img.shields.io/github/issues-pr-closed/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="closed pull request">
 </p>
-<p align="center">
-<img src="https://img.shields.io/github/hacktoberfest/2020/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="hacktoberfest">
-</p>
+
 <p align="center">
 <a href="https://discord.gg/vBFnscs"><img src="https://img.shields.io/discord/763641947754987560.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" alt="discord invite"></a>
 <img src="https://img.shields.io/github/languages/code-size/div-bargali/Data-Structures-and-Algorithms?style=for-the-badge" alt="code size">
