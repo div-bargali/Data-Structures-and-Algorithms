@@ -77,3 +77,7 @@ When you are creating an issue, make sure it's not already present. Furthermore,
 ## References
 
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
+
+## Link (Korean Translate)
+
+- [Korean Translate](./CONTRIBUTING_korean_version.md)
