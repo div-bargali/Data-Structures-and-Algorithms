@@ -4,7 +4,7 @@ using namespace std;
 // Function to find all Permutations of a given string str[i..n-1]
 // containing all distinct characters and which u want to change
 
-void permutations(string str, int i, int n,int j, int k )
+void permutations(string str, int i, int n)
 {
     // base condition
     if (i == n - 1)
