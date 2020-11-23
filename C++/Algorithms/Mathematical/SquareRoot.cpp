@@ -7,7 +7,7 @@ using namespace std;
 
 //Iterative Function
 double sqrtIterative(double x) {
-	double sqrt = x * pow(0.3, log10(x));
+	double sqrt = x * pow(0.3, log10(x)); //Square Root Value
 	for (int i = 0; i < 5; i++)
 		sqrt = (sqrt + (x / sqrt)) * 0.5;
 	return sqrt;
@@ -17,7 +17,7 @@ double sqrtIterative(double x) {
 //Recursive function
 double sqrtRecursive(double num, double prev)
 {
-	double next = (prev + num / prev) / 2;
+	double next = (prev + num / prev) / 2;  //Smallest Square Root Value
 	if (fabs(next - prev) < DBL_EPSILON * next)
 		return next;
 	return sqrtRecursive(num, next);
