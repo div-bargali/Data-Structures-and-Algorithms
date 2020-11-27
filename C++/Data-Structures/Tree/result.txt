@@ -1,0 +1,96 @@
+2	almonds	burgers
+2	almonds	burgers	eggs
+2	almonds	burgers	eggs	soup
+2	almonds	burgers	soup
+2	almonds	eggs
+2	almonds	eggs	soup
+2	almonds	soup
+2	avocado	soup
+2	black tea	mineral water
+2	black tea	mineral water	salmon
+2	black tea	mineral water	salmon	spaghetti
+2	black tea	mineral water	spaghetti
+2	black tea	salmon
+2	black tea	salmon	spaghetti
+2	black tea	spaghetti
+3	body spray	green tea
+2	body spray	green tea	pancakes
+2	body spray	green tea	soup
+2	body spray	pancakes
+2	body spray	soup
+2	brownies	green tea
+2	burgers	eggs
+2	burgers	eggs	soup
+2	burgers	french fries
+2	burgers	french fries	green tea
+2	burgers	french fries	green tea	soup
+2	burgers	french fries	soup
+2	burgers	green tea
+2	burgers	green tea	soup
+3	burgers	soup
+2	chicken	eggs
+2	chicken	eggs	mineral water
+2	chicken	mineral water
+2	chicken	soup
+3	chocolate	eggs
+3	chocolate	eggs	soup
+2	chocolate	green tea
+2	chocolate	green tea	spaghetti
+2	chocolate	ground beef
+2	chocolate	ground beef	soup
+4	chocolate	soup
+2	chocolate	spaghetti
+2	eggs	french fries
+2	eggs	french fries	soup
+2	eggs	mineral water
+4	eggs	soup
+2	eggs	turkey
+2	energy bar	milk
+2	energy bar	milk	mineral water
+2	energy bar	mineral water
+2	escalope	frozen smoothie
+2	escalope	frozen smoothie	mineral water
+2	escalope	frozen smoothie	mineral water	spaghetti
+2	escalope	frozen smoothie	spaghetti
+2	escalope	mineral water
+2	escalope	mineral water	spaghetti
+2	escalope	spaghetti
+3	french fries	green tea
+3	french fries	green tea	soup
+2	french fries	milk
+4	french fries	soup
+2	fresh tuna	mineral water
+2	fresh tuna	mineral water	spaghetti
+2	fresh tuna	spaghetti
+2	frozen smoothie	mineral water
+2	frozen smoothie	mineral water	spaghetti
+2	frozen smoothie	spaghetti
+2	frozen vegetables	soup
+2	frozen vegetables	soup	spaghetti
+2	frozen vegetables	spaghetti
+2	grated cheese	white wine
+2	green tea	milk
+2	green tea	mineral water
+2	green tea	pancakes
+6	green tea	soup
+2	green tea	soup	spaghetti
+4	green tea	spaghetti
+2	ground beef	mineral water
+2	ground beef	mineral water	spaghetti
+2	ground beef	soup
+3	ground beef	spaghetti
+2	hot dogs	soup
+2	milk	mineral water
+2	milk	soup
+2	milk	soup	spaghetti
+3	milk	spaghetti
+2	mineral water	salmon
+2	mineral water	salmon	spaghetti
+2	mineral water	soup
+5	mineral water	spaghetti
+2	mineral water	whole wheat rice
+2	pasta	shrimp
+2	protein bar	soup
+2	salmon	spaghetti
+4	soup	spaghetti
+2	spaghetti	white wine
