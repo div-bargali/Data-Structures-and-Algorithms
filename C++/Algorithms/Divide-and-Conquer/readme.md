@@ -5,8 +5,7 @@
     
     Time complexity = O(k*N^3)
 
-- [Tower of Hanoi1](tower_of_hanoi.cpp)
-- [Tower of Hanoi2](TowerOfHanoi.cpp)
+- [Tower of Hanoi1](tower_of_hanoi.cpp), [Tower of Hanoi2](TowerOfHanoi.cpp)
     
     Tower of Hanoi is a mathematic puzzle which consists of three towers and more than one rings. There are three rules in this algorithm in moving all the disks to some another tower without violationg the sequence of arrangement. 1. Only one disk can be moved among the towers at any given time 2. Only the top disk can be removed 3. No large disk can sit over a small disk	
     
