@@ -30,7 +30,7 @@ using namespace std;
 #define MM                  1000000009
 #define pie                 3.1415926535897932384626433832795
 
-vi tree(4*N),lazy(4*N,0),v(N);
+vi tree(4*N),lazy(4*N,0),v(N);                              //insert first data
 void push(ll node) {
     tree[node*2] += lazy[node];
     lazy[node*2] += lazy[node];
@@ -38,7 +38,7 @@ void push(ll node) {
     lazy[node*2+1] += lazy[node];
     lazy[node] = 0;
 }
-void build(ll node, ll left, ll right){
+void build(ll node, ll left, ll right){                     
     if(left == right){
         tree[node] = v[left];
     }
@@ -49,7 +49,7 @@ void build(ll node, ll left, ll right){
         tree[node] = tree[2*node] + tree[2*node+1];
     }
 }
-void update(ll node,ll left,ll right,ll l,ll r,ll add) {
+void update(ll node,ll left,ll right,ll l,ll r,ll add) {    //insert new data
     if(r < left || right < l){
         return;
     }
@@ -66,7 +66,7 @@ void update(ll node,ll left,ll right,ll l,ll r,ll add) {
     }
 }
 
-ll query(ll node,ll left,ll right,ll l,ll r){
+ll query(ll node,ll left,ll right,ll l,ll r){   //get data
     if(l>r){
         return -inf;
     }
