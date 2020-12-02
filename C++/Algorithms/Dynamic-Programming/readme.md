@@ -1,4 +1,4 @@
-### Dynamic-Programming // 커밋 아직 안함
+### Dynamic-Programming 
 - [0-1 Knapsack Problem](0-1%20Knapsack%20Problem/0-1%20Knapsack%20Problem.cpp)
     
     0-1 Knapsack Problem is a problem in combinatiorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. And for the 0-1 Knapsack problem, you cannot break an item, either pick the complete item or don't pick it(0-1 property)
