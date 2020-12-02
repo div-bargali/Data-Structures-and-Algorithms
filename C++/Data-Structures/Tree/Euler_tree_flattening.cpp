@@ -5,7 +5,7 @@
     make the start timer to 0
     
     start dfs and upon reaching any new node assign start time to that node
-	and when the dfs for that node completes assign the finish time for that node 
+   and when the dfs for that node completes assign the finish time for that node 
  
 
 */
@@ -29,36 +29,36 @@ vi adj[1000];
 int timer = 1;
 
 
-void dfs(int node, int par){
-	s[node] = timer;
-	ft[timer] = node;
-	timer++;
-	for(int child: adj[node]){
-		if(child!=par)
-		dfs(child,node);
-	}
-	t[node] = timer;
-	ft[timer] = node;
-	timer++;
-	
+void dfs(int node, int par){         //defin dfs
+   s[node] = timer;
+   ft[timer] = node;
+   timer++;
+   for(int child: adj[node]){
+      if(child!=par)
+      dfs(child,node);            //recursive
+   }
+   t[node] = timer;
+   ft[timer] = node;
+   timer++;
+   
 }
 
-int main(){
-	int n; cin>>n;
-	fo(i,n-1){
-		int a,b;
-		cin>>a>>b;
-		adj[a].pb(b), adj[b].pb(a);
-	}
-	
-	//timer=1;
-	dfs(1,-1);
-	
-	cout<<"\nstart time:  ";
-	fo(i,n) cout<<s[i]<<" ";
-	cout<<"\nend time:  ";
-	fo(i,n) cout<<t[i]<<" ";
-	cout<<"\n flat tree: ";
-	fo(i,2*n) cout<<ft[i]<<" ";
-	
+int main(){                        //driver
+   int n; cin>>n;
+   fo(i,n-1){
+      int a,b;
+      cin>>a>>b;
+      adj[a].pb(b), adj[b].pb(a);
+   }
+   
+   //timer=1;
+   dfs(1,-1);                     
+   
+   cout<<"\nstart time:  ";
+   fo(i,n) cout<<s[i]<<" ";
+   cout<<"\nend time:  ";
+   fo(i,n) cout<<t[i]<<" ";
+   cout<<"\n flat tree: ";
+   fo(i,2*n) cout<<ft[i]<<" ";
+   
 }
