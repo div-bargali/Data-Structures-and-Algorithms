@@ -16,17 +16,16 @@ Output Format
 The output contains T lines, each line containing the modified list.
 
 Contributor = Ankit Surwade
+*/
 
-
-/*
 #include <bits/stdc++.h>
 using namespace std;
-typedef struct Node{
+typedef struct Node{                          //create class
   int data;
   struct Node* next;
 }node;
   node* head=NULL;
-void insertAtEnd(int data){
+void insertAtEnd(int data){                   //insert function (from beginning to end)
     node *nn=(node*) malloc(sizeof(node));
     nn->data=data;
     nn->next=NULL;
@@ -41,7 +40,7 @@ void insertAtEnd(int data){
     }
     temp->next=nn;
 }
-void insertAtMid(node* nn,node **head){
+void insertAtMid(node* nn,node **head){        //insert mid
 if((*head)==NULL || (*head)->data >= nn->data)
 {
     nn->next=*head;
@@ -64,7 +63,7 @@ node* nen(int data)
     return nn;
 
 }
-void display()
+void display()                                   //print function
 {
   node* temp;
   temp=head;
@@ -73,7 +72,7 @@ void display()
     temp=temp->next;
   }
 }
-int main()
+int main()                                        //driver mode
   {
     //write your code here
     int  t;
@@ -86,13 +85,13 @@ while(t--)
   for(int i=0;i<n;i++)
   {
     cin>>data;
-    insertAtEnd(data);
+    insertAtEnd(data);                              //call insert function
   }
   int item;
   cin>>item;
   node* nn =nen(item);
-  insertAtMid(nn,&head);
-  display();
+  insertAtMid(nn,&head);                            //call insert middle function
+  display();                                        //call print function
   nn=NULL;
   
  head=NULL;
@@ -100,3 +99,4 @@ while(t--)
 }
     return 0;
   }
+
