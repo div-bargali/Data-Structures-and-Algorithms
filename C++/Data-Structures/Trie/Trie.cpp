@@ -21,7 +21,7 @@ then in trie they are stored as
 #include <map>
 #include <iostream>
 
-struct TrieNode {
+struct TrieNode {                                               //create class
   std::string val;
   std::map<const char, TrieNode*> Children = {};
   bool isEnd;
@@ -30,13 +30,13 @@ struct TrieNode {
 
 void addToTrie(std::string s, TrieNode* root);
 
-void setupTrie(std::vector<std::string> words, TrieNode* root){
+void setupTrie(std::vector<std::string> words, TrieNode* root){ //setting Trie
   for(auto& j : words){
     addToTrie(j, root);
   }
 }
 
-void addToTrie(std::string s, TrieNode* root){  
+void addToTrie(std::string s, TrieNode* root){                   //insert data
   TrieNode* curr = root;
   
   for(int i = 0; i < s.size(); i++){
@@ -53,7 +53,7 @@ void addToTrie(std::string s, TrieNode* root){
   curr->isEnd = true;
 }
 
-bool isMember(std::string word, TrieNode* root){
+bool isMember(std::string word, TrieNode* root){    //find data function
   TrieNode* curr = root;
   
   for(int i = 0; i < word.length(); i++){
