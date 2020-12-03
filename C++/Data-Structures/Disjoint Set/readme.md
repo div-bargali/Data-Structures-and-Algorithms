@@ -9,8 +9,8 @@ union(x, y): Add the set to which x belongs and the set to which y belongs.
 
 - [Disjoint SEt Ranked by Size of Set](Disjoint_set_ranked_by_size_of_set.cpp)
 
-    Time complexity => O(n)
+    Time complexity = O(n)
 
 - [Implementation of Disjoint Set](Implementation%20of%20disjoint%20set.cpp)
 
-    Time complexity => O(n)
+    Time complexity = O(n)
