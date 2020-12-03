@@ -21,4 +21,4 @@
 
     Queue, is a linear structure which follows a particular order in which the operations are performed. The order is FIFO(First In First Out). Difference between stacks and queues is in removing. In a stack we remove the item the most recently added where in a queue, we remove the item the least recently added. 
     
-    Time complexity => O(n) 
+    Time complexity = O(n) 
