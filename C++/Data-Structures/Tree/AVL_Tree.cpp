@@ -27,6 +27,7 @@ b) y is left child of z and x is right child of y (Left Right Case)
 c) y is right child of z and x is right child of y (Right Right Case)
 d) y is right child of z and x is left child of y (Right Left Case)
 
+
 Algorithm:-
 1) Perform the normal BST insertion.
 2) The current node must be one of the ancestors of the newly inserted node. Update the height of the current node.
