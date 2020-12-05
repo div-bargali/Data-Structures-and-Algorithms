@@ -2,93 +2,92 @@
 #include <bits/stdc++.h> 
 using namespace std; 
 
-struct Node 
+struct Node                            //create class
 { 
-	int data; 
-	struct Node* link; 
+   int data; 
+   struct Node* link; 
 }; 
 
 struct Node* top; 
 
-void push(int data) 
+void push(int data)                      //insert function
 { 
-	struct Node* temp; 
-	temp = new Node(); 
-	if (!temp) 
-	{ 
-		cout << "\nHeap Overflow"; 
-		exit(1); 
-	} 
+   struct Node* temp; 
+   temp = new Node(); 
+   if (!temp) 
+   { 
+      cout << "\nHeap Overflow"; 
+      exit(1); 
+   } 
 
-	temp->data = data; 
-	temp->link = top; 
-	top = temp; 
+   temp->data = data; 
+   temp->link = top; 
+   top = temp; 
 } 
 
-int isEmpty() 
+int isEmpty()                            //get empty or not of stack
 { 
-	return top == NULL; 
+   return top == NULL; 
 } 
 
-int peek() 
+int peek()                               //get first data
 { 
-	
-	if (!isEmpty()) 
-		return top->data; 
-	else
-		exit(1); 
+   
+   if (!isEmpty()) 
+      return top->data; 
+   else
+      exit(1); 
 } 
 
-void pop() 
+void pop()                               //delete function
 { 
-	struct Node* temp; 
+   struct Node* temp; 
 
-	if (top == NULL) 
-	{ 
-		cout << "\nStack Underflow" << endl; 
-		exit(1); 
-	} 
-	else
-	{ 
-		temp = top; 
-		top = top->link; 
-		temp->link = NULL; 
-		free(temp); 
-	} 
+   if (top == NULL) 
+   { 
+      cout << "\nStack Underflow" << endl; 
+      exit(1); 
+   } 
+   else
+   { 
+      temp = top; 
+      top = top->link; 
+      temp->link = NULL; 
+      free(temp); 
+   } 
 } 
 
-void display() 
+void display()                            //print function
 { 
-	struct Node* temp; 
-	if (top == NULL) 
-	{ 
-		cout << "\nStack Underflow"; 
-		exit(1); 
-	} 
-	else
-	{ 
-		temp = top; 
-		while (temp->link!= NULL) 
-		{ 
-			cout << temp->data << "-> "; 
-			temp = temp->link; 
-		} 
+   struct Node* temp; 
+   if (top == NULL) 
+   { 
+      cout << "\nStack Underflow"; 
+      exit(1); 
+   } 
+   else
+   { 
+      temp = top; 
+      while (temp->link!= NULL) 
+      { 
+         cout << temp->data << "-> "; 
+         temp = temp->link; 
+      } 
         cout<<temp->data;
-	} 
+   } 
 } 
 
-int main() 
+int main()                               //driver
 { 
-	push(11); 
-	push(22); 
-	push(33); 
-	push(44); 
-	display(); 
-	cout << "\nTop element is "<< peek() << endl; 
-	pop(); 
-	pop(); 
-	display(); 
-	cout << "\nTop element is "<< peek() << endl; 
-	return 0; 
+   push(11); 
+   push(22); 
+   push(33); 
+   push(44); 
+   display(); 
+   cout << "\nTop element is "<< peek() << endl; 
+   pop(); 
+   pop(); 
+   display(); 
+   cout << "\nTop element is "<< peek() << endl; 
+   return 0; 
 } 
-

@@ -12,7 +12,7 @@
 using namespace std;
 
 template <typename T>
-class BinaryTreeNode {
+class BinaryTreeNode {          //create Class
     public : 
     T data;
     BinaryTreeNode<T> *left;
@@ -24,14 +24,14 @@ class BinaryTreeNode {
         right = NULL;
     }
     ~BinaryTreeNode() {
-    	if(left) 
-       		delete left;
-    	if(right) 
-       		delete right;
+       if(left) 
+             delete left;
+       if(right) 
+             delete right;
     }
 };
 
-BinaryTreeNode<int>* takeInput() {
+BinaryTreeNode<int>* takeInput() {      //Create BST
     int rootData;
     //Root Data
     cin >> rootData;
@@ -43,16 +43,16 @@ BinaryTreeNode<int>* takeInput() {
     q.push(root);
     while(!q.empty()) {
         BinaryTreeNode<int> *currentNode = q.front();
-	q.pop();
+   q.pop();
         int leftChild, rightChild;
-        //Left Child
+                                        //Left Child
         cin >> leftChild;
         if(leftChild != -1) {
             BinaryTreeNode<int>* leftNode = new BinaryTreeNode<int>(leftChild);
             currentNode -> left =leftNode;
             q.push(leftNode);
         }
-        //Right child
+                                        //Right child
         cin >> rightChild;
         if(rightChild != -1) {
             BinaryTreeNode<int>* rightNode = new BinaryTreeNode<int>(rightChild);
@@ -65,18 +65,18 @@ BinaryTreeNode<int>* takeInput() {
 
 bool help(BinaryTreeNode<int> *root, int min, int max){
     
-    if(root== NULL)
+    if(root== NULL)     
         return true;
     
-    if(root->data>=min && root->data<= max)
+    if(root->data>=min && root->data<= max)     //finding
     {
         bool ansl= help(root->left, min, root->data-1);
         bool ansr= help(root->right, root->data, max);
         
-        if(ansl && ansr)
+        if(ansl && ansr)                        //find data
             return true;
         else
-            return false;
+            return false;                       //can't find
         
     }
     else
@@ -88,18 +88,18 @@ bool isBST(BinaryTreeNode<int> *root){
     int min= INT_MIN;
     int max= INT_MAX;
     
-    return help(root, min, max);
+    return help(root, min, max);                //call help function 
 
 }
 
 int main() {
-    BinaryTreeNode<int>* root = takeInput();
+    BinaryTreeNode<int>* root = takeInput();    //call create BST function
 
-    if(isBST(root)) {
-        cout << "true" << endl;
+    if(isBST(root)) {                           //call isBST
+        cout << "true" << endl;                 
     }
     else {
         cout << "false" << endl;
     }
-    delete root;
+    delete root;                                //free BST
 }
