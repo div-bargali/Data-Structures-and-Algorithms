@@ -1,0 +1,70 @@
+import java.util.*;
+class node {
+    static Scanner sc=new Scanner(System.in);
+    int data;
+    node next;
+    node(int n)
+    {
+        data=n;
+        next=null;
+    }
+    static node takeInput(){
+        int d;
+        System.out.println("Enter the numbers");
+        d=sc.nextInt();
+        node head=null;
+        node tail=null;
+        while(d!=-1)
+        {
+            node m=new node(d);
+            if(head==null)
+            {
+                head=m;
+                tail=m;
+            }
+            else
+            {
+                tail.next=m;
+                tail=tail.next;
+            }
+            d=sc.nextInt();
+        }
+        return head;
+    }
+    static void print(node head)
+    {
+        node temp=head;
+        while(temp!=null)
+        {
+            System.out.print(temp.data+"->");
+            temp=temp.next;
+        }
+        System.out.print("null");
+    }
+   static node reverse(node head)
+    {
+        
+        node prev=null;
+        node curr=head;
+        node next;
+        while(curr!=null){
+        next=curr.next;
+        
+        curr.next=prev;
+        prev=curr;
+        curr=next;
+        }
+         //head = prev;
+        return prev;
+    }
+    
+    
+    
+    public static void main(String[] args) {
+    
+        node head=takeInput();
+        head=reverse(head);
+        System.out.println("Reversed Linked list is ");
+        print(head);    
+        }
+}
