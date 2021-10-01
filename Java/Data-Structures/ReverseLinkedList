@@ -10,7 +10,7 @@ class node {
     }
     static node takeInput(){
         int d;
-        System.out.println("Enter the numbers");
+        System.out.println("Enter the Linked List Terminated with -1");
         d=sc.nextInt();
         node head=null;
         node tail=null;
