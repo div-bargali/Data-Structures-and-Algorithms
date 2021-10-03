@@ -56,15 +56,14 @@ Node* InsertEnd(Node* head, int data){
 //function for reversing a list iteratively
 
 Node* reverseLinkIter(Node* head){
-        Node* temp= head;
+        Node* curr= head;
         Node* prev= NULL;
-        Node* folw;
-        while (temp!=NULL){
-                folw= temp->next;
-                temp->next= prev;
-                prev= temp;
-                temp= folw;
-
+       
+        while (curr!=NULL){
+              Node* next=curr->next;
+                curr->next=prev;
+                prev=curr;
+                curr=next;
         }
         head= prev;
         return head;
