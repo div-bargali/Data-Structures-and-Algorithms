@@ -2,7 +2,7 @@
 name: Create an Issue
 about: For creating a new issue for HacktoberFest
 title: 'Algorithm or Data Structure name | Language'
-labels: good first issue, hacktoberfest
+labels: good first issue
 assignees: ''
 
 ---
