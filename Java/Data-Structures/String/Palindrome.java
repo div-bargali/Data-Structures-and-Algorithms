@@ -1,3 +1,5 @@
+// This code will check for palindrome strings
+
 /** Palindrome String : A string that is spelt same even if reversed is called palindrome string.
  * example : madam , civic , kayak , refer , reviver etc.
  *
